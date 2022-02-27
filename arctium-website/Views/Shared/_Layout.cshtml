@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/css/main.css" />
+    <link rel="stylesheet" href="~/css/documentation.css" />
+    <script src="~/js/init.js"></script>
+    <script src="~/js/arctiumGlobal.js"></script>
+    <script src="~/js/documentation.js"></script>
+    <title>@ViewData["Title"] - arctium_website</title>
+    @RenderSection("Scripts", required: false)
+</head>
+    <body>
+        @RenderBody()
+
+        <script>
+            arctiumInit.invokeBodyLoaded();
+            window.addEventListener('load', arctiumInit.invokeOnDocumentLoaded);
+        </script>
+    </body>
+</html>

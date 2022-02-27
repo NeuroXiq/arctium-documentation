@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+
+}
+
+@section Scripts {
+    <script src="~/js/home.js"></script>
+}
+
+<div class="background-image-container" >
+    <img class="background-image" />
+</div>
+
+<div class="home" id="home" style="display: none;">
+    <header class="title">
+        <h1 class="h1">Arctium</h1>
+        <h2 class="h2">.NET Core Crypto Library</h2>
+    </header>
+
+    <nav class="nav">
+        <ul class="vert-list">
+            <li>
+                <a class="button button--active" href="https://www.github.com">Github</a>
+            </li>
+            <li>
+                <a class="button a-spa" href="/documentation">Documentation</a>
+            </li>
+            <li>
+                <a class="button a-spa" href="/online-tools">Online tools</a>
+            </li>
+            <li>
+                <a class="button a-spa" href="/forum">Forum</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+@await Html.PartialAsync("../Documentation/Index")

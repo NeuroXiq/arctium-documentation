@@ -1,0 +1,13 @@
+﻿using System.Diagnostics;
+using Microsoft.AspNetCore.Mvc;
+
+namespace arctium_website.Controllers
+{
+    public class OnlineToolsController : Controller
+    {
+        public IActionResult Index()
+        {
+            return View();
+        }
+    }
+}
