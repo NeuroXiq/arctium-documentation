@@ -37,26 +37,26 @@ input:focus {
 }
 
 /* scrollbar */
-ul::-webkit-scrollbar {
+::-webkit-scrollbar {
     width: 8px;
     background-color: rgba(255, 255, 255, 0.2);
 }
 
 
-ul::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
     box-shadow: rgba(255,255,255, 0.4);
 }
 
-ul::-webkit-scrollbar-track:hover {
+::-webkit-scrollbar-track:hover {
 
 }
 
-ul::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
     border-radius: 8px;
     background-color: rgba(255,255,255,0.6);
 }
 
-ul::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb:hover {
     background-color: var(--color-active-white);
 }
 
@@ -244,11 +244,6 @@ ul::-webkit-scrollbar-thumb:hover {
     overflow-y: auto;
 }
 
-.vert-list-button.selected {
-    background-color: var(--color-active-white);
-    color: var(--color-active-black);
-}
-
 .vert-list-button {
     display: block;
     padding: 8px;
@@ -259,9 +254,19 @@ ul::-webkit-scrollbar-thumb:hover {
     display: flex;
     align-items: center;
 
-    transition: background-color var(--time-select-item);
+    transition: background-color var(--time-select-item), transform 0.1s ;
 }
 
-.vert-list-button:hover:not(.selected) {
+.vert-list-button:hover {
     background-color: var(--color-background-active);
+}
+
+.vert-list-button.selected {
+    background-color: var(--color-active-white);
+    color: var(--color-active-black);
+}
+
+.vert-list-button:active {
+    background-color: var(--color-background-active2);
+    transform: scale(0.97);
 }

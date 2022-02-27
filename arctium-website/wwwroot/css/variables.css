@@ -4,6 +4,7 @@
     --color-foreground: rgba(255, 255, 255, 0.8);
     --color-foreground-active: white;
     --color-active-black: black;
+    --color-background-active2: rgba(255,255,255, 0.15);
 
     --time-select-item: 0.15s;
 }
