@@ -1,11 +1,29 @@
-## Simple DER decoder
+<div class="documentation-page">
+    <h1 class="title">Simple DER decoder</h1>
+    <h2 class="title">Content:</h2>
 
-**Arctium.Cryptography.ASN1.Serialization.X690** namespace contains simple ASN.1  
+    <ul class="content-table">
+        <li class="content-table__item">
+            <a class="link" href="#summary">Summary</a>
+        </li>
+        <li class="content-table__item">
+            <a class="link" href="#examples">Examples</a>
+        </li>
+    </ul>
+
+    <hr />
+
+    <h2 class="title" id="summary">Summary</h2>
+    <p>
+        <bold class="text-bold">Arctium.Cryptography.ASN1.Serialization.X690</bold>
+namespace contains simple ASN.1  
 X690 decoders which can be used for decoding serizalized objects.  
 For this example, I will take encoded data from wikipedia:
-https://en.wikipedia.org/wiki/Abstract_Syntax_Notation_One
-
-```
+        <a href="https://en.wikipedia.org/wiki/Abstract_Syntax_Notation_One">ASN 1</a>
+    </p>
+    <div class="code-container">
+        <div class="code">
+            <pre>
  FooQuestion ::= SEQUENCE {
         trackingNumber INTEGER,
         question       IA5String
@@ -15,15 +33,26 @@ myQuestion FooQuestion ::= SEQUENCE {
     trackingNumber     5,
     question           "Anybody there?"
 }
-```  
-
-and encoded bytes are: 
-```
+            </pre>
+        </div>
+    </div>
+    <p>and encoded bytes are: </p>
+    <div class="code-container">
+        <div class="code">
+<pre>
 30 13 02 01 05 16 0e 41 6e 79 62 6f 64 79 20 74 68 65 72 65 3f
-```  
+</pre>
+        </div>
+    </div>
 
-```cs
- using Arctium.Cryptography.ASN1.ObjectSyntax.Types.BuildInTypes;
+    <hr />
+
+    <h2 id="examples" class="title">Examples</h2>
+
+    <div class="code-container">
+        <div class="code">
+<pre>
+using Arctium.Cryptography.ASN1.ObjectSyntax.Types.BuildInTypes;
 using Arctium.Cryptography.ASN1.Serialization.X690;
 using Arctium.Cryptography.ASN1.Serialization.X690.DER;
 using System;
@@ -166,15 +195,15 @@ namespace DEBUG_ConsoleApplicationForTests
             /*
              * This was a basic ASN.1 DER decoder. 
              * Other documetation can be found in 
-             * assembly as a 
-             * ///<summary>...</summary>
+             * assembly as a summary comments
              */
-
-
         }
     }
 }
+</pre>
+        </div>
+    </div>
 
-```
+</div>
 
 

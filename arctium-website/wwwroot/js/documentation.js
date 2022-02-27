@@ -47,10 +47,10 @@ var documentation = (function () {
         currentSelected && currentSelected.classList.remove('selected');
         aEl.classList.add('selected');
 
-        loadContent(newContent);
+        changeContent(newContent);
     }
 
-    function loadContent(name) {
+    function changeContent(name) {
         arctium.global.togglePageLoading(true);
         var options = {
             method: 'POST',
@@ -60,11 +60,23 @@ var documentation = (function () {
             }
         };
 
-        documentationAjax.fetchRaw('getContent', options)
+        contentEl.classList.add('fade-out');
+
+        var waitToFinishAnimation = new Promise((resolve) => setTimeout(resolve, 100));
+
+        var ajax = documentationAjax.fetchRaw('getContent', options)
             .then(response => response.text())
             .then(contentPageHtml => {
                 arctium.global.togglePageLoading(false);
-                contentEl.innerHTML = contentPageHtml
+                return contentPageHtml;
+            });
+
+        Promise.all([waitToFinishAnimation, ajax])
+            .then(promises => {
+                var contentPageHtml = promises[1];
+
+                contentEl.innerHTML = contentPageHtml;
+                contentEl.classList.remove('fade-out');
             });
     }
 

@@ -95,6 +95,7 @@
     overflow: auto;
     color: white;
     background-color: rgba(0,0,0,0.50);
+    transition: all var(--time-fade-out) ease-out;
 }
 
 .code-container {
@@ -103,16 +104,15 @@
 
 .code-container .code {
     font-family: "Lucida Console", monospace;
-    font-size: 12px;
+    font-size: 14px;
     padding-left: 8px;
-}
-
-.documentation-page .content-title {
-    margin: 8px 0 16px 0;
+    color: var(--color-foreground);
 }
 
 .documentation-page .title {
     margin-bottom: 16px;
+    color: var(--color-foreground);
+    font-weight: 400;
 }
 
 .content-table {
@@ -124,5 +124,10 @@
 .content-table .content-table__item {
     display: list-item;
     list-style-type: circle;
-    color: white;
+    color: var(--color-foreground);
+    margin: 2px 0;
+}
+
+.content-table .content-table__item:hover {
+    color: var(--color-foreground-active);
 }

@@ -24,6 +24,17 @@ a {
     color: white;
 }
 
+a.link,
+.link {
+    color: var(--color-foreground);
+    font-weight: 600;
+    font-size: 15px;
+}
+
+a.link:hover, .link:hover {
+    color: var(--color-foreground-active);
+}
+
 input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-results-button,
 input[type="search"]::-webkit-search-results-decoration,
@@ -269,4 +280,15 @@ input:focus {
 .vert-list-button:active {
     background-color: var(--color-background-active2);
     transform: scale(0.97);
+}
+
+.fade-out {
+    transform: scale(0.99);
+    opacity: 0;
+}
+
+/* text */
+
+.text.text-bold {
+    font-weight: 600;
 }

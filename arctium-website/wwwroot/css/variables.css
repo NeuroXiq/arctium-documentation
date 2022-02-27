@@ -6,5 +6,9 @@
     --color-active-black: black;
     --color-background-active2: rgba(255,255,255, 0.15);
 
+    --color-hover-foreground-not-hover: rgba(255, 255, 255, 0.8);
+    --color-hover-foreground-hover: white;
+
     --time-select-item: 0.15s;
+    --time-fade-out: 0.100s;
 }
