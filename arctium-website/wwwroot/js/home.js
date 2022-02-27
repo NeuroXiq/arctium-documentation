@@ -45,7 +45,7 @@
         var newScale = 1 + (Math.floor(Math.random() * 3) / 10);
         var newX = -Math.floor((Math.random() * 50));
         var newY = -Math.floor((Math.random() * 50));
-        var newHue = (currentHue + Math.floor(Math.random() * 30)) % 360;
+        var newHue = (currentHue + Math.floor(Math.random() * 90)) % 360;
         var newContrast = 100 + Math.floor(Math.random() * 10);
 
         var style = `transform: translate(${newX}px, ${newY}px) scale(${newScale});`;

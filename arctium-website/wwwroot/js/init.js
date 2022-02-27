@@ -1,4 +1,6 @@
-﻿var arctiumInit = (function () {
+﻿var arctium = {};
+
+var arctiumInit = (function () {
     var callbacks = [];
     var docLoadedCallbacks = [];
 

@@ -1,6 +1,7 @@
-﻿var arctiumGlobal = (function () {
-    var globalPageLoadingId = 'global-page-loading';
+﻿arctium.global = {}
 
+var arctiumGlobal = (function () {
+    var globalPageLoadingId = 'global-page-loading';
 
     function togglePageLoading(toggle) {
         if (!toggle) {
@@ -30,3 +31,5 @@
         togglePageLoading: togglePageLoading
     }
 })();
+
+arctium.global = arctiumGlobal;

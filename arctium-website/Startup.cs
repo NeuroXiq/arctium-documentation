@@ -55,6 +55,7 @@ namespace arctium_website
 
             app.UseMvc(routes =>
             {
+
                 routes.MapRoute(
                     name: "short",
                     template: "{subpage?}",

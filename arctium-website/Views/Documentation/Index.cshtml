@@ -3,22 +3,21 @@
         <form>
             <div class="search-input-wrapper">
                 <input type="search" class="input search" />
-                @Html.SvgIcon("search")
+                <button class="button button--circle search-button">
+                    @Html.SvgIcon("search")
+                </button>
             </div>
         </form>
     </div>
-    <ul class="left-bar vert-list">
-        <li>
-            <button>Text 1</button>
-        </li>
-        <li>
-            <button>Text 1</button>
-        </li>
-        <li>
-            <button>Text 1</button>
-        </li>
+    <ul id="documentation-nav-pages-list" class="left-bar vert-list">
     </ul>
-    <main class="content">
-        content 
+    <main id="documentation-content" class="content">
+        
     </main>
 </div>
+
+<template id="template-left-bar-list-item">
+    <li class="vert-list__item">
+        <a class="vert-list-button a-spa" href="/template-nav"></a>
+    </li>
+</template>

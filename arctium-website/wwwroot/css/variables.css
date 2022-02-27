@@ -1,0 +1,9 @@
+﻿:root {
+    --color-active-white: white;
+    --color-background-active: rgba(255,255,255,0.03);
+    --color-foreground: rgba(255, 255, 255, 0.8);
+    --color-foreground-active: white;
+    --color-active-black: black;
+
+    --time-select-item: 0.15s;
+}

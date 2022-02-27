@@ -14,7 +14,6 @@
 
 
   <ItemGroup>
-    <Folder Include="Models\" />
     <Folder Include="Views\OnlineTools\" />
     <Folder Include="Views\Forum\" />
     <Folder Include="wwwroot\lib\" />
