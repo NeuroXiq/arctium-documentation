@@ -16,13 +16,9 @@ var documentation = (function () {
         contentEl = document.getElementById('documentation-content');
 
         documentationAjax = new arctium.ajax('documentation');
-        show();
     }
 
     function show() {
-        documentationEl.style = '';
-        setTimeout(() => documentationEl.classList.remove('documentation-fade-out'), 10);
-
         documentationAjax.fetch('GetPagesMetadata', {})
             .then(result => showPagesList(result));
 

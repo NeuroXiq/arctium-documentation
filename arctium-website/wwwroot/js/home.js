@@ -7,19 +7,39 @@
 
     function onBodyLoaded() {
         bgImage = document.getElementsByClassName('background-image')[0];
-        homeEl = document.getElementById('home');
+        homeEl=document.getElementById('home');
+
 
         setTimeout(() => {
                 animateBackground();
                 setInterval(animateBackground, bgAnimationTime);
         }, 100);
 
-        initNavButtons();
+        //initNavButtons();
+        initSpaRouting();
     }
 
-    function initNavButtons() {
-        var nav = document.querySelector('.home .nav');
-        nav.addEventListener('click', onNavClick);
+    function initSpaRouting() {
+        var routesConfig=[
+            {
+                route: '/',
+                element: document.querySelector('.home-page-wrapper-spa')
+            },
+            {
+                route: '/documentation',
+                element: document.querySelector('.documentation-page-wrapper-spa')
+            },
+            {
+                route: '/online-tools',
+                element: document.querySelector('.online-tools-page-wrapper-spa')
+            },
+            {
+                route: '/forum',
+                element: document.querySelector('.forum-page-wrapper-spa')
+            },
+        ]
+
+        arctium.global.spaRouting.initRoutes(routesConfig);
     }
 
     function onNavClick(e) {

@@ -1,7 +1,7 @@
 ﻿/* Layout */
 .documentation.grid-container {
     display: grid;
-    grid-template-rows: 72px 1fr;
+    grid-template-rows: 78px 1fr;
     grid-template-columns: 300px 1fr;
     height: 100vh;
     width: 100vw;
@@ -22,13 +22,8 @@
     grid-column: 2 / 3;
 }
 
-.documentation.documentation-fade-out {
-    opacity: 0;
-    transform: translateX(100vw);
-}
-
 .documentation {
-    background-color: rgba(0,0,0,0.92);
+    background-color: rgba(0,0,0,0.82);
     opacity: 1;
     transform: translateX(0);
     transition: transform 0.2s;
@@ -36,9 +31,9 @@
 
 /* search bar */
 .documentation .search-bar {
-    display: flex;
-    padding-top: 12px;
-    justify-content: center;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 64px 1fr;
     width: 100%;
     border-bottom: 1px solid #888888;
 }
@@ -58,6 +53,21 @@
 .documentation .search-bar .icon {
     width: 100%;
     height: 100%;
+}
+
+.documentation .button--back {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    margin: auto;
+}
+
+.documentation .search-form {
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .input.search:focus {

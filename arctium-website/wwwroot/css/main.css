@@ -169,17 +169,35 @@ input:focus {
     flex-direction: column;
 }
 
+/* button */
+
 .button {
+    color: var(--color-foreground);
     padding: 8px;
     border-radius: 4px;
 }
 
-.button.button--outline {
-
+.button.button--back.button--circle {
+    width: 40px;
+    height: 40px;
 }
 
-.button.button--white {
-    color: white;
+.button:hover {
+    color: var(--color-foreground-active);
+}
+
+.button.button--circle {
+    border-radius: 100%;
+    border-style: none;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    background-color: transparent;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.button.button--circle:hover {
+    background-color: rgba(255,255,255,0.05);
 }
 
 /* Page loading overlay */
@@ -231,23 +249,6 @@ input:focus {
     color: inherit;
 }
 
-/*  */
-
-.button.button--circle {
-    border-radius: 100%;
-    border-style: none;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    color: white;
-    background-color: transparent;
-    transition: background-color 0.3s ease-in-out;
-}
-
-.button.button--circle:hover {
-    background-color: rgba(255,255,255,0.05);
-}
-
 /* vert-list */
 .vert-list {
     display: flex;
@@ -292,3 +293,20 @@ input:focus {
 .text.text-bold {
     font-weight: 600;
 }
+
+.hide {
+    position:  fixed;
+    top: -100vh;
+    left: -100vw;
+}
+
+.spa-page-wrapper {
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+.spa-page-wrapper.spa-routing-fade-out {
+    opacity: 0;
+    transform: scale(0.98);
+}
+
+.

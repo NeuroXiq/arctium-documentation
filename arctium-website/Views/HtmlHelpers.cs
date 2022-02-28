@@ -1,18 +1,26 @@
 ﻿using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace arctium_website.Views
 {
     public static class HtmlHelpers
     {
+        public static IHtmlContent BackButton(this IHtmlHelper helper)
+        {
+            var button = new TagBuilder("a");
+
+            button.AddCssClass("button button button--circle button--back spa-route-back");
+            button.InnerHtml.AppendHtml(helper.SvgIcon("back-arrow"));
+
+            return button;
+        }
+
         public static IHtmlContent SvgIcon(this IHtmlHelper helper, string iconName)
         {
-            var knowIcons = new string[] { "search" };
+            var knowIcons = new string[] { "search", "back-arrow" };
             var iconPath = Path.Combine(Startup.WebRootPath, "svg-icons", $"{iconName}.svg");
 
             if (!knowIcons.Any(icon => icon == iconName))

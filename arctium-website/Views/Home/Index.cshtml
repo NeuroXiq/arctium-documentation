@@ -11,28 +11,40 @@
     <img class="background-image" />
 </div>
 
-<div class="home" id="home" style="display: none;">
-    <header class="title">
-        <h1 class="h1">Arctium</h1>
-        <h2 class="h2">.NET Core Crypto Library</h2>
-    </header>
+<div class="spa-page-wrapper home-page-wrapper-spa">
+    <div class="home" id="home">
+        <header class="title">
+            <h1 class="h1">Arctium</h1>
+            <h2 class="h2">.NET Core Crypto Library</h2>
+        </header>
 
-    <nav class="nav">
-        <ul class="vert-list2">
-            <li>
-                <a class="button button--active" href="https://www.github.com">Github</a>
-            </li>
-            <li>
-                <a class="button a-spa" href="/documentation">Documentation</a>
-            </li>
-            <li>
-                <a class="button a-spa" href="/online-tools">Online tools</a>
-            </li>
-            <li>
-                <a class="button a-spa" href="/forum">Forum</a>
-            </li>
-        </ul>
-    </nav>
+        <nav class="nav">
+            <ul class="vert-list2">
+                <li>
+                    <a class="button button--active" href="https://www.github.com">Github</a>
+                </li>
+                <li>
+                    <a class="button spa-route" href="/documentation">Documentation</a>
+                </li>
+                <li>
+                    <a class="button spa-route" href="/online-tools">Online tools</a>
+                </li>
+                <li>
+                    <a class="button spa-route" href="/forum">Forum</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
 </div>
 
-@await Html.PartialAsync("../Documentation/Index")
+<div class="spa-page-wrapper documentation-page-wrapper-spa hide">
+    @await Html.PartialAsync("../Documentation/Index")
+</div>
+
+<div class="spa-page-wrapper forum-page-wrapper-spa hide">
+    @await Html.PartialAsync("../Forum/Index")
+</div>
+
+<div class="spa-page-wrapper online-tools-page-wrapper-spa hide">
+    @await Html.PartialAsync("../OnlineTools/Index")
+</div>

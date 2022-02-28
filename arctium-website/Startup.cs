@@ -52,13 +52,14 @@ namespace arctium_website
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+            app.UseRouting();
 
-            app.UseMvc(routes =>
+            app.UseEndpoints(routes =>
             {
 
-                routes.MapRoute(
+                routes.MapControllerRoute(
                     name: "short",
-                    template: "{subpage?}",
+                    pattern: "{subpage?}",
                     defaults: new { controller = "Home", action = "Index" });
 
                 //routes.MapRoute(
