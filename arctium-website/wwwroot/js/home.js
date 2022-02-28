@@ -42,25 +42,6 @@
         arctium.global.spaRouting.initRoutes(routesConfig);
     }
 
-    function onNavClick(e) {
-        if (!e.target.closest('.a-spa')) {
-            return;
-        };
-
-        e.preventDefault();
-        var pageName = e.target.getAttribute('href');
-
-        homeEl.classList.add('home-fade-out');
-        setTimeout(() => homeEl.style = 'display: none', 200);
-        setTimeout(() => showPage(pageName), 201);
-    }
-
-    function showPage(pageName) {
-        if (pageName === '/documentation') {
-            documentation.show();
-        }
-    }
-
     function animateBackground() {
         var newScale = 1 + (Math.floor(Math.random() * 3) / 10);
         var newX = -Math.floor((Math.random() * 50));

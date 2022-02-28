@@ -8,11 +8,12 @@ namespace arctium_website.Views
 {
     public static class HtmlHelpers
     {
-        public static IHtmlContent BackButton(this IHtmlHelper helper)
+        public static IHtmlContent BackButton(this IHtmlHelper helper, string route)
         {
             var button = new TagBuilder("a");
 
-            button.AddCssClass("button button button--circle button--back spa-route-back");
+            button.AddCssClass("button button button--circle button--back spa-route");
+            button.Attributes.Add("href", route);
             button.InnerHtml.AppendHtml(helper.SvgIcon("back-arrow"));
 
             return button;

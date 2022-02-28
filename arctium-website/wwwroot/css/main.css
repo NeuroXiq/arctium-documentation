@@ -301,12 +301,10 @@ input:focus {
 }
 
 .spa-page-wrapper {
-    transition: opacity 0.2s, transform 0.2s;
+    transition: opacity 0.1s, transform 0.1s;
 }
 
 .spa-page-wrapper.spa-routing-fade-out {
     opacity: 0;
     transform: scale(0.98);
 }
-
-.
