@@ -40,6 +40,13 @@
         ]
 
         arctium.global.spaRouting.initRoutes(routesConfig);
+        arctium.global.spaRouting.onRouteChangeCompleted(afterRouteChanged);
+    }
+
+    function afterRouteChanged(e) {
+        if(e.newRoute==='/documentation') {
+            documentation.show();
+        }
     }
 
     function animateBackground() {

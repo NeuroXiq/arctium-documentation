@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using arctium_website.Database;
+using arctium_website.Database.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -31,12 +33,16 @@ namespace arctium_website
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.AddMvc();
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddScoped<SQLiteDb>();
+            services.AddScoped<IAlgorithmSummaryRepository, AlgorithmSummaryRepository>();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            SQLiteDb.Init();
+
             WebRootPath = env.WebRootPath;
 
             if (env.IsDevelopment())

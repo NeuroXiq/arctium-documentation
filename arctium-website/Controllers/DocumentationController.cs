@@ -2,6 +2,8 @@
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using arctium_website.Database.Entities;
+using arctium_website.Database.Repository;
 using arctium_website.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,11 +14,22 @@ namespace arctium_website.Controllers
     public class DocumentationController : ControllerBase
     {
         private static readonly List<string> documentationPagesNames;
+        private IAlgorithmSummaryRepository algorithmSummaryRepository;
 
         static DocumentationController()
         {
             var docsDirectory = Path.Combine(Startup.WebRootPath, "documentation-pages");
             documentationPagesNames = Directory.GetFiles(docsDirectory).Select(path => Path.GetFileName(path)).ToList();
+        }
+
+        public DocumentationController(IAlgorithmSummaryRepository algorithmSummaryRepository)
+        {
+            this.algorithmSummaryRepository = algorithmSummaryRepository;
+        }
+
+        public IList<AlgorithmSummary> GetAlgorithmsSummary()
+        {
+            return algorithmSummaryRepository.GetAll();
         }
 
         public IActionResult GetContent(GetContentModel model)

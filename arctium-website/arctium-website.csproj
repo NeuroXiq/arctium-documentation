@@ -11,4 +11,25 @@
     <Folder Include="wwwroot\lib\" />
   </ItemGroup>
 
+
+  <ItemGroup>
+    <None Include="wwwroot\documentation-pages\asn1-x690-decoder.html" />
+    <None Include="wwwroot\documentation-pages\blake2b.md" />
+    <None Include="wwwroot\documentation-pages\blake3.md" />
+    <None Include="wwwroot\documentation-pages\general.html" />
+    <None Include="wwwroot\documentation-pages\hc-256.md" />
+    <None Include="wwwroot\documentation-pages\jh.html" />
+    <None Include="wwwroot\documentation-pages\pkcs1v2_2.md" />
+    <None Include="wwwroot\documentation-pages\rabbit.md" />
+    <None Include="wwwroot\documentation-pages\sha1.md" />
+    <None Include="wwwroot\documentation-pages\skein.md" />
+    <None Include="wwwroot\documentation-pages\twofish.md" />
+    <None Include="wwwroot\documentation-pages\x509-cert.md" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="6.0.2" />
+  </ItemGroup>
+
 </Project>

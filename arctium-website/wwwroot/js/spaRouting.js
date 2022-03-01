@@ -1,5 +1,6 @@
 ﻿arctium.global.spaRouting=(function() {
     var routesCfg=[];
+    var onRouteChangeCompletedCallbacks=[];
     var currentRoute;
 
     function initRoutes(routesConfig) {
@@ -61,9 +62,17 @@
         },cssTransitionTime);
 
         setCurrentRoute(newRouteCfg.route);
+        onRouteChangeCompletedCallbacks.forEach(callback => callback({
+            newRoute: newRouteCfg.route
+        }));
+    }
+
+    function onRouteChangeCompleted(callback) {
+        onRouteChangeCompletedCallbacks.push(callback);
     }
 
     return {
         initRoutes: initRoutes,
+        onRouteChangeCompleted: onRouteChangeCompleted
     };
 })();
