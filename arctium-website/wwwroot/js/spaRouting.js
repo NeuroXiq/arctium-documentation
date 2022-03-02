@@ -14,7 +14,14 @@
     }
 
     function onWindowPopState(e) {
+        return;
+        if(window.location.pathname===currentRoute) {
+            window.history.replaceState(currentRoute,'',currentRoute);
+            return;
+        }
+
         e.preventDefault();
+
         changeVisiblePage(e.state);
     }
 

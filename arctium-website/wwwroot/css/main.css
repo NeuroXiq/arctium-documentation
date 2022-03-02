@@ -308,3 +308,17 @@ input:focus {
     opacity: 0;
     transform: scale(0.98);
 }
+
+.table {
+    border: 1px solid var(--color-foreground);
+    padding: 32px;
+    border-radius: 12px;
+}
+
+.tr {
+    height: 32px;
+}
+
+.td {
+
+}

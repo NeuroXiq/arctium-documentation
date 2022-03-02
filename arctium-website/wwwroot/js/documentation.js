@@ -19,10 +19,7 @@ var documentation = (function () {
     }
 
     function show() {
-        documentationAjax.fetch('GetPagesMetadata', {})
-            .then(result => showPagesList(result));
-
-        showAlgorithmsSummary();
+        showPagesList();
         pagesListEl.addEventListener('click', handleContentChange);
     }
 
@@ -48,28 +45,35 @@ var documentation = (function () {
     }
 
     function changeContent(name) {
+        let contentHtml;
+
+        if(name==='algorithms-summary') {
+            contentHtml = getAlgorithmsSummaryHtml();
+        } else {
+            var options={
+                method: 'POST',
+                body: JSON.stringify({contentName: name}),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            };
+
+            contentHtml=documentationAjax.fetchRaw('getContent',options)
+                .then(response => response.text())
+                .then(contentPageHtml => {
+                    return contentPageHtml;
+                });
+        }
+
         arctium.global.togglePageLoading(true);
-        var options = {
-            method: 'POST',
-            body: JSON.stringify({ contentName: name }),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        };
 
         contentEl.classList.add('fade-out');
 
         var waitToFinishAnimation = new Promise((resolve) => setTimeout(resolve, 100));
 
-        var ajax = documentationAjax.fetchRaw('getContent', options)
-            .then(response => response.text())
-            .then(contentPageHtml => {
-                arctium.global.togglePageLoading(false);
-                return contentPageHtml;
-            });
-
-        Promise.all([waitToFinishAnimation, ajax])
+        Promise.all([waitToFinishAnimation, contentHtml])
             .then(promises => {
+                arctium.global.togglePageLoading(false);
                 var contentPageHtml = promises[1];
 
                 contentEl.innerHTML = contentPageHtml;
@@ -77,20 +81,18 @@ var documentation = (function () {
             });
     }
 
-    function showAlgorithmsSummary() {
+    function getAlgorithmsSummaryHtml() {
         let algorithms=documentationAjax.fetch('GetAlgorithmsSummary');
 
-        let options={
-            method: 'POST',
-            body: JSON.stringify({contentName: 'algorithms-summary-template.html'}),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        };
-
-
-        algorithms.then(algorithmsData => {
+        return algorithms.then(algorithmsDataObject => {
+            let algorithmsData=algorithmsDataObject.algorithmsSummary;
+            let contentContainer=document.createElement('div');
+            contentContainer.classList.add('algorithms-summary');
             let grouped={};
+
+            let contentTable=document.createElement('ul');
+            contentTable.classList.add('content-table');
+            contentContainer.appendChild(contentTable);
 
             let statusInfo={
                 '0': {text: 'OK',color: 'lawngreen'},
@@ -105,14 +107,27 @@ var documentation = (function () {
             });
 
             for(let groupName in grouped) {
-                let dataRows=grouped[groupName];
+                let contentTableItem=document.createElement('li');
+                let contentTableLink=document.createElement('a');
+                contentTableItem.classList.add('content-table__item');
+                contentTableLink.href='#'+groupName;
+                contentTableLink.innerHTML=groupName;
+                contentTableLink.classList.add('link');
 
+                contentTableItem.appendChild(contentTableLink);
+                contentTable.appendChild(contentTableItem);
+
+                let dataRows=grouped[groupName];
                 let table = document.createElement('table');
                 let caption=table.createCaption();
+                let captionInnerH2Tag=document.createElement('h2');
                 let thead=table.createTHead();
                 let tbody=table.createTBody();
 
-                caption.innerHTML=groupName;
+                captionInnerH2Tag.innerHTML=groupName;
+                captionInnerH2Tag.id=groupName;
+                caption.appendChild(captionInnerH2Tag);
+                caption.classList.add('caption');
 
                 theadRow=thead.insertRow(-1);
                 theadRow.insertCell(-1).innerHTML='Name';
@@ -127,11 +142,13 @@ var documentation = (function () {
                     let standardDocLink=document.createElement('a');
                     
                     arctiumDocLink.classList.add('link');
+                    arctiumDocLink.classList.add('spa-route');
                     standardDocLink.classList.add('link');
-                    arctiumDocLink.href=dataRow['arctiumWebsiteDocumentationUrl'];
+                    arctiumDocLink.href='/documentation/'+dataRow['arctiumWebsiteDocumentationUrl'];
                     standardDocLink.href=dataRow['standardWebsiteUrl'];
                     arctiumDocLink.innerHTML='Doc';
                     standardDocLink.innerHTML=dataRow['standardName'];
+                    standardDocLink.target="_blank";
 
                     row.insertCell(-1).innerHTML=dataRow['algorithmName'];
                     row.insertCell(-1).appendChild(standardDocLink);
@@ -143,21 +160,34 @@ var documentation = (function () {
                     statusCell.style.color=statusInfo[status].color;
                 });
 
-                contentEl.appendChild(table);
+                contentContainer.appendChild(table);
+
+                table.classList.add('table');
+                table.querySelectorAll('td').forEach(td => td.classList.add('td'));
+                table.querySelectorAll('tr').forEach(tr => tr.classList.add('tr'));
             }
 
+            return contentContainer.outerHTML;
         });
     }
 
     function showPagesList(pagesList) {
-        pagesList.forEach(page => {
-            let listItem = pageListItemTemplate.cloneNode(true);
-            let aEl = listItem.querySelector('a');
+        appendPageListItem('Algorithms summary','algorithms-summary');
 
-            aEl.innerHTML = page.name;
-            aEl.setAttribute('href', page.htmlPageName);
+        documentationAjax.fetch('GetPagesMetadata',{})
+            .then(pagesList =>
+                pagesList.forEach(page =>
+                    appendPageListItem(page.name,page.htmlPageName)));
 
-            pagesListEl.appendChild(listItem);
-        });
+    }
+
+    function appendPageListItem(pageName,pageHref) {
+        let listItem=pageListItemTemplate.cloneNode(true);
+        let aEl=listItem.querySelector('a');
+
+        aEl.innerHTML=pageName;
+        aEl.setAttribute('href',pageHref);
+
+        pagesListEl.appendChild(listItem);
     }
 })();

@@ -20,6 +20,8 @@
     }
 
     function initSpaRouting() {
+        arctium.global.spaRouting.onRouteChangeCompleted(afterRouteChanged);
+
         var routesConfig=[
             {
                 route: '/',
@@ -40,7 +42,6 @@
         ]
 
         arctium.global.spaRouting.initRoutes(routesConfig);
-        arctium.global.spaRouting.onRouteChangeCompleted(afterRouteChanged);
     }
 
     function afterRouteChanged(e) {

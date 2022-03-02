@@ -27,13 +27,14 @@ namespace arctium_website.Controllers
             this.algorithmSummaryRepository = algorithmSummaryRepository;
         }
 
-        public IList<AlgorithmSummary> GetAlgorithmsSummary()
+        public IActionResult GetAlgorithmsSummary()
         {
-            return algorithmSummaryRepository.GetAll();
+            return Ok(System.IO.File.ReadAllText(Path.Combine(Startup.WebRootPath, "documentation-pages", "algorithms-summary.json")));
         }
 
         public IActionResult GetContent(GetContentModel model)
         {
+            System.Threading.Thread.Sleep(1000);
             var name = model.ContentName;
 
             if (!documentationPagesNames.Contains(name)) return NotFound("Documentation page not found");
@@ -53,6 +54,8 @@ namespace arctium_website.Controllers
             {
                 x.Add(new DocumentationPageMetadataModel(docFile, docFile));
             }
+
+            x.Add(new DocumentationPageMetadataModel("Algorithms Summary", "algorithms-summary"));
 
             for (int i = 0; i < 120; i++)
             {

@@ -1,0 +1,260 @@
+{
+  "algorithmsSummary": [
+    {
+      "algorithmName": "TLS 1.1",
+      "standardName": "[RFC 4346]",
+      "standardWebsiteUrl": "https://www.ietf.org/rfc/rfc4346.txt",
+      "arctiumWebsiteDocumentationUrl": "tls11",
+      "group": "tls",
+      "status": 0
+    },
+    {
+      "algorithmName": "TLS 1.2",
+      "standardName": "[RFC 5246]",
+      "standardWebsiteUrl": "https://www.ietf.org/rfc/rfc5246.txt",
+      "arctiumWebsiteDocumentationUrl": "tls12",
+      "group": "tls",
+      "status": 1
+    },
+    {
+      "algorithmName": "TLS 1.3",
+      "standardName": "[RFC 8446]",
+      "standardWebsiteUrl": "https://tools.ietf.org/html/rfc8446",
+      "arctiumWebsiteDocumentationUrl": "tls13",
+      "group": "tls",
+      "status": 2
+    },
+    {
+      "algorithmName": "ECC Crypto (2006)",
+      "standardName": "[RFC 4492]",
+      "standardWebsiteUrl": "https://tools.ietf.org/html/rfc4492",
+      "arctiumWebsiteDocumentationUrl": "elliptic-curve",
+      "group": "ecc",
+      "status": 2
+    },
+    {
+      "algorithmName": "ECC Crypto (2018)",
+      "standardName": "[RFC 8422]",
+      "standardWebsiteUrl": "https://tools.ietf.org/html/rfc8422",
+      "arctiumWebsiteDocumentationUrl": "elliptic-curve",
+      "group": "ecc",
+      "status": 2
+    },
+    {
+      "algorithmName": "TLS Extensions",
+      "standardName": "[RFC 6066]",
+      "standardWebsiteUrl": "https://tools.ietf.org/html/rfc6066",
+      "arctiumWebsiteDocumentationUrl": "tls-extensions",
+      "group": "tls-extensions",
+      "status": 1
+    },
+    {
+      "algorithmName": "ALPN",
+      "standardName": "[RFC 7301]",
+      "standardWebsiteUrl": "https://tools.ietf.org/html/rfc7301",
+      "arctiumWebsiteDocumentationUrl": "tls-extensions",
+      "group": "tls-extensions",
+      "status": 1
+    },
+    {
+      "algorithmName": "Negotiated FFDHE Parameters",
+      "standardName": "[RFC 7919]",
+      "standardWebsiteUrl": "https://tools.ietf.org/html/rfc7919",
+      "arctiumWebsiteDocumentationUrl": "other",
+      "group": "other",
+      "status": 2
+    },
+    {
+      "algorithmName": "ChaCha20",
+      "standardName": "[RFC 7539]",
+      "standardWebsiteUrl": "https://tools.ietf.org/html/rfc7539",
+      "arctiumWebsiteDocumentationUrl": "chacha20",
+      "group": "hash-functions",
+      "status": 1
+    },
+    {
+      "algorithmName": "Rabbit",
+      "standardName": "-",
+      "standardWebsiteUrl": "-",
+      "arctiumWebsiteDocumentationUrl": "rc4",
+      "group": "hash-functions",
+      "status": 2
+    },
+    {
+      "algorithmName": "RC4",
+      "standardName": "-",
+      "standardWebsiteUrl": "-",
+      "arctiumWebsiteDocumentationUrl": "rc4",
+      "group": "hash-functions",
+      "status": 2
+    },
+    {
+      "algorithmName": "Spritz",
+      "standardName": "-",
+      "standardWebsiteUrl": "-",
+      "arctiumWebsiteDocumentationUrl": "spritz",
+      "group": "hash-functions",
+      "status": 2
+    },
+    {
+      "algorithmName": "VMPC",
+      "standardName": "-",
+      "standardWebsiteUrl": "-",
+      "arctiumWebsiteDocumentationUrl": "vmpc",
+      "group": "hash-functions",
+      "status": 2
+    },
+    {
+      "algorithmName": "RC4+",
+      "standardName": "-",
+      "standardWebsiteUrl": "-",
+      "arctiumWebsiteDocumentationUrl": "rc4_plus",
+      "group": "hash-functions",
+      "status": 2
+    },
+    {
+      "algorithmName": "X509 Certificate",
+      "standardName": "[RFC 5280]",
+      "standardWebsiteUrl": "https://tools.ietf.org/html/rfc5280",
+      "arctiumWebsiteDocumentationUrl": "x509-certificate",
+      "group": "x509",
+      "status": 2
+    },
+    {
+      "algorithmName": "X509Cert_Update",
+      "standardName": "[RFC 6818]",
+      "standardWebsiteUrl": "https://tools.ietf.org/html/rfc6818",
+      "arctiumWebsiteDocumentationUrl": "x509-certificate",
+      "group": "x509",
+      "status": 2
+    },
+    {
+      "algorithmName": "X509Cert_Update",
+      "standardName": "[RFC 8398]",
+      "standardWebsiteUrl": "https://tools.ietf.org/html/rfc8398",
+      "arctiumWebsiteDocumentationUrl": "x509-certificate",
+      "group": "x509",
+      "status": 2
+    },
+    {
+      "algorithmName": "X509Cert_Update",
+      "standardName": "[RFC 8399]",
+      "standardWebsiteUrl": "https://tools.ietf.org/html/rfc8399",
+      "arctiumWebsiteDocumentationUrl": "x509-certificate",
+      "group": "x509",
+      "status": 2
+    },
+    {
+      "algorithmName": "Poly1305",
+      "standardName": "[RFC 8439]",
+      "standardWebsiteUrl": "https://tools.ietf.org/html/rfc8439",
+      "arctiumWebsiteDocumentationUrl": "poly1305",
+      "group": "hash-functions",
+      "status": 0
+    },
+    {
+      "algorithmName": "SHA2-224",
+      "standardName": "[RFC 6234]",
+      "standardWebsiteUrl": "https://tools.ietf.org/html/rfc6234",
+      "arctiumWebsiteDocumentationUrl": "sha2",
+      "group": "hash-functions",
+      "status": 0
+    },
+    {
+      "algorithmName": "SHA2-256",
+      "standardName": "[RFC 6234]",
+      "standardWebsiteUrl": "https://tools.ietf.org/html/rfc6234",
+      "arctiumWebsiteDocumentationUrl": "sha2",
+      "group": "hash-functions",
+      "status": 0
+    },
+    {
+      "algorithmName": "SHA2-384",
+      "standardName": "[RFC 6234]",
+      "standardWebsiteUrl": "https://tools.ietf.org/html/rfc6234",
+      "arctiumWebsiteDocumentationUrl": "sha2",
+      "group": "hash-functions",
+      "status": 0
+    },
+    {
+      "algorithmName": "SHA2-512",
+      "standardName": "[RFC 6234]",
+      "standardWebsiteUrl": "https://tools.ietf.org/html/rfc6234",
+      "arctiumWebsiteDocumentationUrl": "sha2",
+      "group": "hash-functions",
+      "status": 0
+    },
+    {
+      "algorithmName": "SHA3-224",
+      "standardName": "[FIPS 202]",
+      "standardWebsiteUrl": "https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.202.pdf",
+      "arctiumWebsiteDocumentationUrl": "sha3",
+      "group": "hash-functions",
+      "status": 0
+    },
+    {
+      "algorithmName": "SHA3-256",
+      "standardName": "[FIPS 202]",
+      "standardWebsiteUrl": "https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.202.pdf",
+      "arctiumWebsiteDocumentationUrl": "sha3",
+      "group": "hash-functions",
+      "status": 0
+    },
+    {
+      "algorithmName": "SHA3-384",
+      "standardName": "[FIPS 202]",
+      "standardWebsiteUrl": "https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.202.pdf",
+      "arctiumWebsiteDocumentationUrl": "sha3",
+      "group": "hash-functions",
+      "status": 0
+    },
+    {
+      "algorithmName": "SHA3-512",
+      "standardName": "[FIPS 202]",
+      "standardWebsiteUrl": "https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.202.pdf",
+      "arctiumWebsiteDocumentationUrl": "sha3",
+      "group": "hash-functions",
+      "status": 0
+    },
+    {
+      "algorithmName": "BLAKE3",
+      "standardName": "",
+      "standardWebsiteUrl": "",
+      "arctiumWebsiteDocumentationUrl": "blake3",
+      "group": "hash-functions",
+      "status": 0
+    },
+    {
+      "algorithmName": "BLAKE2b512",
+      "standardName": "",
+      "standardWebsiteUrl": "",
+      "arctiumWebsiteDocumentationUrl": "blake2",
+      "group": "hash-functions",
+      "status": 0
+    },
+    {
+      "algorithmName": "Keccak",
+      "standardName": "[FIPS 202]",
+      "standardWebsiteUrl": "https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.202.pdf",
+      "arctiumWebsiteDocumentationUrl": "keccak",
+      "group": "hash-functions",
+      "status": 2
+    },
+    {
+      "algorithmName": "SHAKE128",
+      "standardName": "[FIPS 202]",
+      "standardWebsiteUrl": "https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.202.pdf",
+      "arctiumWebsiteDocumentationUrl": "blake2",
+      "group": "hash-functions",
+      "status": 0
+    },
+    {
+      "algorithmName": "SHAKE256",
+      "standardName": "[FIPS 202]",
+      "standardWebsiteUrl": "https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.202.pdf",
+      "arctiumWebsiteDocumentationUrl": "blake2",
+      "group": "hash-functions",
+      "status": 0
+    }
+  ]
+}
