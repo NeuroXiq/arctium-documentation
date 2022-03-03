@@ -27,18 +27,6 @@
         for(let i=0;i<ordered.length;i++) {
             if(newRoute.startsWith(ordered[i].route)&&ordered[i].route.length <= newRoute.length) {
                 return ordered[i];
-
-                // if(ordered[i].route===newRoute) {
-                //     result.hasParams=false;
-                //     result.params=null;
-                // } else {
-                //     result.hasParams=true;
-                //     result.params=getRouteParams(ordered[i].route,newRoute);
-                // }
-                // 
-                // found=true;
-                // 
-                // break;
             }
         }
 
