@@ -3,7 +3,7 @@
         this.controller = controller;
 
         this.fetchRaw = function(action, options) {
-            var url = `${controller}/${action}`;
+            var url = `/${controller}/${action}`;
 
             return fetch(url, options);
         }

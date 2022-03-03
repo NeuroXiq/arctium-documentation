@@ -63,10 +63,15 @@ namespace arctium_website
             app.UseEndpoints(routes =>
             {
 
-                routes.MapControllerRoute(
-                    name: "short",
-                    pattern: "{subpage?}",
-                    defaults: new { controller = "Home", action = "Index" });
+                //routes.MapControllerRoute(
+                //    name: "short",
+                //    pattern: "{subpage?}",
+                //    defaults: new { controller = "Home", action = "Index" });
+
+                routes.MapControllerRoute("api", "{controller}/{action}");
+
+                routes.MapControllerRoute("asdf", "{*catchall}",
+                    new { controller = "Home", action = "Index" });
 
                 //routes.MapRoute(
                 //    name: "default",

@@ -1,4 +1,4 @@
-﻿(function () {
+﻿(function() {
     arctiumInit.onBodyLoaded(onBodyLoaded);
 
     var bgAnimationTime = 40 * 1000;
@@ -20,16 +20,17 @@
     }
 
     function initSpaRouting() {
-        arctium.global.spaRouting.onRouteChangeCompleted(afterRouteChanged);
 
         var routesConfig=[
             {
                 route: '/',
-                element: document.querySelector('.home-page-wrapper-spa')
+                element: document.querySelector('.home-page-wrapper-spa'),
             },
             {
                 route: '/documentation',
-                element: document.querySelector('.documentation-page-wrapper-spa')
+                element: document.querySelector('.documentation-page-wrapper-spa'),
+                canHaveParams: true,
+                elementInstance: documentation
             },
             {
                 route: '/online-tools',
@@ -42,12 +43,6 @@
         ]
 
         arctium.global.spaRouting.initRoutes(routesConfig);
-    }
-
-    function afterRouteChanged(e) {
-        if(e.newRoute==='/documentation') {
-            documentation.show();
-        }
     }
 
     function animateBackground() {

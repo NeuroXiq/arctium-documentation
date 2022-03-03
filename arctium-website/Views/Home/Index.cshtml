@@ -21,16 +21,16 @@
         <nav class="nav">
             <ul class="vert-list2">
                 <li>
-                    <a class="button button--active" href="https://www.github.com">Github</a>
+                    <a class="button home-button button--active" href="https://www.github.com">Github</a>
                 </li>
                 <li>
-                    <a class="button spa-route" href="/documentation">Documentation</a>
+                    <a class="button home-button spa-route" href="/documentation">Documentation</a>
                 </li>
                 <li>
-                    <a class="button spa-route" href="/online-tools">Online tools</a>
+                    <a class="button home-button spa-route" href="/online-tools">Online tools</a>
                 </li>
                 <li>
-                    <a class="button spa-route" href="/forum">Forum</a>
+                    <a class="button home-button spa-route" href="/forum">Forum</a>
                 </li>
             </ul>
         </nav>
@@ -47,4 +47,9 @@
 
 <div class="spa-page-wrapper online-tools-page-wrapper-spa hide">
     @await Html.PartialAsync("../OnlineTools/Index")
+</div>
+
+<div id="spa-page-not-found" class="spa-page-not-found" style="display: none">
+    <div class="h1">Page not Found</div>
+    <a class="button home-button spa-route" href="/">Home</a>
 </div>

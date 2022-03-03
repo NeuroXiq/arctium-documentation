@@ -34,7 +34,6 @@ namespace arctium_website.Controllers
 
         public IActionResult GetContent(GetContentModel model)
         {
-            System.Threading.Thread.Sleep(1000);
             var name = model.ContentName;
 
             if (!documentationPagesNames.Contains(name)) return NotFound("Documentation page not found");

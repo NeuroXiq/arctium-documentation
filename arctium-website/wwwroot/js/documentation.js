@@ -3,13 +3,15 @@ var documentation = (function () {
     arctiumInit.onBodyLoaded(init);
     
     return {
-        show: function () { show(); }
+        show: function() {show();},
     }
 
     var documentationEl, documentationAjax, pagesListEl;
-    var pageListItemTemplate, contentEl;
+    var pageListItemTemplate,contentEl;
+    var initialized;
 
     function init() {
+        initialized=false;
         documentationEl = document.getElementById('documentation');
         pageListItemTemplate = document.getElementById('template-left-bar-list-item').content.cloneNode(true);
         pagesListEl = document.getElementById('documentation-nav-pages-list');
@@ -19,29 +21,36 @@ var documentation = (function () {
     }
 
     function show() {
-        showPagesList();
-        pagesListEl.addEventListener('click', handleContentChange);
+        if(!initialized) {
+            initialize().then(showCurrentPage);
+        } else {
+            showCurrentPage();
+        }
     }
 
-    function handleContentChange(e) {
-        var aEl = e.target.closest('.a-spa');
-        if (!aEl) {
+    function showCurrentPage() {
+        if(window.location.pathname==='/documentation') {
             return;
         }
 
-        e.preventDefault();
 
-        var currentSelected = pagesListEl.querySelector('.selected');
-        var newContent = aEl.getAttribute('href');
+        let contentName=window.location.pathname.split('/')[2];
 
-        if (currentSelected && currentSelected.getAttribute('href') === newContent) {
+        var currentSelected=pagesListEl.querySelector('.selected');
+        var newSelected=pagesListEl.querySelector(`[href="/documentation/${contentName}"]`);
+
+        if(currentSelected&&currentSelected.getAttribute('href')===contentName) {
             return;
         }
 
-        currentSelected && currentSelected.classList.remove('selected');
-        aEl.classList.add('selected');
+        currentSelected&&currentSelected.classList.remove('selected');
+        newSelected.classList.add('selected');
 
-        changeContent(newContent);
+        changeContent(contentName);
+    }
+
+    function initialize() {
+        return showPagesList().then(result => initialized = true);
     }
 
     function changeContent(name) {
@@ -174,7 +183,7 @@ var documentation = (function () {
     function showPagesList(pagesList) {
         appendPageListItem('Algorithms summary','algorithms-summary');
 
-        documentationAjax.fetch('GetPagesMetadata',{})
+        return documentationAjax.fetch('GetPagesMetadata',{})
             .then(pagesList =>
                 pagesList.forEach(page =>
                     appendPageListItem(page.name,page.htmlPageName)));
@@ -186,7 +195,8 @@ var documentation = (function () {
         let aEl=listItem.querySelector('a');
 
         aEl.innerHTML=pageName;
-        aEl.setAttribute('href',pageHref);
+        aEl.setAttribute('href','/documentation/' + pageHref);
+        aEl.classList.add('spa-subpage');
 
         pagesListEl.appendChild(listItem);
     }
