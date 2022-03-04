@@ -183,10 +183,10 @@ var documentation = (function () {
     function showPagesList(pagesList) {
         appendPageListItem('Algorithms summary','algorithms-summary');
 
-        return documentationAjax.fetch('GetPagesMetadata',{})
-            .then(pagesList =>
-                pagesList.forEach(page =>
-                    appendPageListItem(page.name,page.htmlPageName)));
+        return documentationAjax.fetch('GetAlgorithmsSummary',{})
+            .then(algoritmsSummary =>
+                algoritmsSummary.algorithmsSummary.forEach(page =>
+                    appendPageListItem(page.algorithmName,page.arctiumWebsiteDocumentationUrl)));
 
     }
 

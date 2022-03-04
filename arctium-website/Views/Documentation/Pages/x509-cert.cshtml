@@ -1,12 +1,39 @@
-## X509 Certificate V3
-This document presents **supported** data structure presented in  
+<div class="documentation-page">
+    <h1 class="title">X509 Certificate V3</h1>
+    <h2 class="title">Content:</h2>
+
+	<ul class="content-table">
+		<li class="content-table__item">
+            <a href="#summary" class="link">Summary</a>
+        </li>
+		<li class="content-table__item">
+			<a class="link" href="#examples">Examples</a>
+		</li>
+	</ul>
+
+    <hr />
+	
+	<h2 class="title" id="summary">Summary</h2>
+	<p>
+		JH Hash function
+	</p>
+
+	<hr />
+
+	<h2>Summary</h2>
+
+<p>
+This document presents <bold>supported</bold> data structure presented in  
 the current implementation of X509 Certificate V3 in Arctium project.
-Current status of this implementation is: **Partial-unsafe**	
+Current status of this implementation is: <bold>Partial-unsafe</bold>
+</p>
+
+<h2>Deserialization</h2>
 
 
-### Deserialization
-
-```cs
+	<div class="code-container">
+		<div class="code">
+    	<pre>
 using Arctium.Cryptography.ASN1.Standards.X501.Types;
 using Arctium.Cryptography.ASN1.Standards.X509.X509Cert;
 using Arctium.Cryptography.ASN1.Standards.X509.X509Cert.Extensions;
@@ -94,11 +121,16 @@ namespace DEBUG_ConsoleApplicationForTests
     }
 }
 
-```
+</pre>
+		</div>
+	</div>
 
-Example output:
+<p>Example output</p>
 
-```
+<div class="code-container">
+	<div class="code">
+	
+	<pre>
 2020-08-05 11:36:04
 2019-05-28 14:30:02
 2
@@ -125,65 +157,111 @@ Extensions type: ExtendedKeyUsage
 Extensions type: AuthorityKeyIdentifier
 Extensions type: SubjectKeyIdentifier
 Extensions type: SCTL
-```
+</pre>
+	</div>
+	</div>
+
+<h2>X509Certificate structure</h2>
+
+
+<table class="table">
+	<thead>
+		<tr>
+			<td>Certificate field</td>
+			<td>Type</td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr><td>Version</td><td>int</td></tr>
+	<tr><td>SerialNumber</td><td>byte</td></tr>
+	<tr><td>RawSignatureValue</td><td>byte[]</td></tr>
+	<tr><td>Issuer</td><td>X500T.Name</td></tr>
+	<tr><td>ValidNotBefore</td><td>DateTime</td></tr>
+	<tr><td>ValidNotAfter</td><td>DateTime</td></tr>
+	<tr><td>Subject</td><td>X500T.Name</td></tr>
+	<tr><td>IssuerUniqueId</td><td>byte[]</td></tr>
+	<tr><td>SubjectUniqueId</td><td>byte[]</td></tr>
+	<tr><td>Extensions</td><td>CertificateExtension[]</td></tr>
+	<tr><td>SubjectPublicKey</td><td>SubjectPublicKeyInfo</td></tr>
+	</tbody>
+	
+</table>
 
 
 
+<h2>Subject Public Key info</h2>
 
+<table class="table">
+	<thead>
+		<tr><th>Fields</th><th>Type</th></tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>AlgorithmType</td>
+			<td>PublicKeyAlgorithm (enum)</td>
+`		</tr>
+	</tbody>
+</table>
 
-### X509Certificate structure
+<table class="table">
+	<thead>
+		<tr><th>Methods</th><th>Comment</th></tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>GetParms(T)</td>
+			<td>Returns parameters for pulic key (if exists)</td>
+`		</tr>
+		<tr>
+			<td>GetPublicKey</td>
+			<td>Returns typed public key</td>
+`		</tr>
+	</tbody>
+</table>
 
-|Certificate field|Type|
-|:----:|:----:|
-|Version|int||  
-|SerialNumber|byte[]||  
-|RawSignatureValue|byte[]||  
-|Issuer|X500T.Name||  
-|ValidNotBefore|DateTime||  
-|ValidNotAfter|DateTime||  
-|Subject|X500T.Name||  
-|IssuerUniqueId|byte[]||  
-|SubjectUniqueId|byte[]||  
-|Extensions|CertificateExtension[]||  
-|Signature|Signature||  
-|SubjectPublicKey|SubjectPublicKeyInfo||  
+<p>GetPublicKey(T) Generic method parameter **must** be used for casting 
+of the inner representation of public key value. For example:</p>
 
+<div class="code-container">
+	<div class="code">
+<pre>
 
-#### Subject Public Key info
-
-|Fields|Type|
-|:----:|:-----:|
-|AlgorithmType|PublicKeyAlgorithm (enum)|
-
-|Methods|Comment|
-|:----:|:---:|
-|GetParms<T>|Returns parameters for pulic key (if exists)|
-|GetPublicKey<T>|Returns typed public key|
-
-GetPublicKey<T> Generic method parameter **must** be used for casting 
-of the inner representation of public key value.
-For example:
-
-```cs
     if(certificate.SubjectPublicKey.AlgorithmType == PublicKeyAlgorithm.RSAEncryption)
         { 
             RSAPublicKey rsa = certificate.GetPulicKey<RSAPublicKey>();
             byte[] mod = rsa.Modulus;
             byte[] publicExp = rsa.PulicExponent;
         }
-```
+</pre>
+	</div>
+</div>
 
-Supported casts are present below: 
-|AlgorithmType Value|<T> param of GetPublicKey<T>|
-|:----:|:---:|
-|RSAEncryption|RSAPulicKey|
-|ECPublicKey|byte[]|
+<p>Supported casts are present below: </p>
 
+<table>
+	<thead>
+		<tr>
+			<th>AlgorithmType Value</th>
+			<th>param of GetPublicKey(T)</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>RSAEncryption</td>
+			<td>RSAPulicKey</td>
+		</tr>
+		<tr>
+			<td>ECPublicKey</td>
+			<td>byte[]</td>
+		</tr>
+	</tbody>
+</table>
 
-GetParms<T>
-for example:
+<p>For example: </p>
 
-```cs
+<div class="code-container">
+	<div class="code">
+		<pre>
 if(cert.SubjectPublicKey.ECPublicKey)
 {
     EcpkParameters ecParams = cert.GetParms<EcpkParameters>();
@@ -200,29 +278,98 @@ if(cert.SubjectPublicKey.ECPublicKey)
             break;
     }
 }
-```
+		</pre>
+	</div>
+</div>
 
-Casting for parameters:
-|Type   | Params |
-|:-----:|:------:|
-|ECPublicKey|EcpkParameters|
+<p>Casting for parameters:</p>
 
-### Extensions
+<table class="table">
+	<thead>
+		<tr>
+			<td>Type</td>
+			<td>Params</td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>ECPublicKey</td>
+			<td>EcpkParameters</td>
+		</tr>
+	</tbody>
+</table>
 
-All extensions not mentioned in table below are mapped to the  
-special type type of extension: **UnknownExtension**  
+	<h2>
+		Extensions
+	</h2>
 
-|Name |Status |Comment|
-|:--------:|:--------:|:-----:|
-|Authority Info Access|Partial-unsafe|General names problems|
-|Certifiate Policies| **OK** | |
-|Distribution Points|Partial-unsafe|General names problems|
-|Extended Key Usage|**OK**||
-|Authority Key Identifier|**OK**||
-|Basic Constraints Extension|**OK**||
-|Key Usage Extension|**OK**||
-|SCTL (Signed certificate timestamp list)|Partial-safe|Class exists (but holds raw data)|
-|Subject Alternative Name Extension|Partial-unsafe|General names problems|
-|Subject Key Identifier|**OK**||
-|Unknown Extension|**OK**|Special Extensions type, if extensions is not on this list, raw ExtValue bytes are present in this object|
+<p>All extensions not mentioned in table below are mapped to the  
+special type type of extension: <strong>UnknownExtension</strong></p>
 
+<table class="table">
+	<thead>
+		<tr>
+			<td>Name</td>
+			<td>Status</td>
+			<td>Comment</td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Authority Info Access</td>
+			<td>Partial-unsafe</td>
+			<td>General names problems</td>
+		</tr>
+		<tr>
+			<td>Certifiate Policies</td>
+			<td>OK</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>Distribution Points</td>
+			<td>Partial-unsafe</td>
+			<td>General names problems</td>
+		</tr>
+		<tr>
+			<td>Extended Key Usage</td>
+			<td>OK</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>Authority Key Identifier</td>
+			<td>OK</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>Basic Constraints Extension</td>
+			<td>OK</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>Key Usage Extension</td>
+			<td>OK</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>SCTL (Signed certificate timestamp list)</td>
+			<td>Partial-safe</td>
+			<td>Class exists (but holds raw data)</td>
+		</tr>
+		<tr>
+			<td>Subject Alternative Name Extension</td>
+			<td>Partial-unsafe</td>
+			<td>General names problems</td>
+		</tr>
+		<tr>
+			<td>Subject Key Identifier</td>
+			<td>OK</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>Unknown Extension</td>
+			<td>OK</td>
+			<td>Special Extensions type, if extensions is not on this list, raw ExtValue bytes are present in this object</td>
+		</tr>
+	</tbody>
+</table>
+</div>

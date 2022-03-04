@@ -76,7 +76,7 @@
       "algorithmName": "Rabbit",
       "standardName": "-",
       "standardWebsiteUrl": "-",
-      "arctiumWebsiteDocumentationUrl": "rc4",
+      "arctiumWebsiteDocumentationUrl": "rabbit",
       "group": "hash-functions",
       "status": 2
     },
@@ -254,6 +254,46 @@
       "standardWebsiteUrl": "https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.202.pdf",
       "arctiumWebsiteDocumentationUrl": "blake2",
       "group": "hash-functions",
+      "status": 0
+    },
+    {
+      "algorithmName": "ASN.1 Decoder",
+      "standardName": "-",
+      "standardWebsiteUrl": "https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.202.pdf",
+      "arctiumWebsiteDocumentationUrl": "asn1-x690-decoder",
+      "group": "other",
+      "status": 0
+    },
+    {
+      "algorithmName": "X509 Certificate",
+      "standardName": "-",
+      "standardWebsiteUrl": "-",
+      "arctiumWebsiteDocumentationUrl": "x509-cert",
+      "group": "other",
+      "status": 1
+    },
+    {
+      "algorithmName": "Twofish",
+      "standardName": "-",
+      "standardWebsiteUrl": "-",
+      "arctiumWebsiteDocumentationUrl": "twofish",
+      "group": "hash-functions",
+      "status": 2
+    },
+    {
+      "algorithmName": "PKCS 1 v2.2",
+      "standardName": "-",
+      "standardWebsiteUrl": "-",
+      "arctiumWebsiteDocumentationUrl": "pkcs1v2_2",
+      "group": "other",
+      "status": 0
+    },
+    {
+      "algorithmName": "Skein",
+      "standardName": "-",
+      "standardWebsiteUrl": "-",
+      "arctiumWebsiteDocumentationUrl": "skein",
+      "group": "other",
       "status": 0
     }
   ]

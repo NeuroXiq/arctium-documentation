@@ -316,7 +316,8 @@ home-home.button:hover {
     border-radius: 12px;
 }
 
-.tr {
+.table .tr,
+.table tr {
     height: 32px;
 }
 

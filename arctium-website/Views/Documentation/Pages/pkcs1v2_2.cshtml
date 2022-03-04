@@ -235,7 +235,7 @@ namespace DEBUG_ConsoleApplicationForTests
             // If Key is represented in PEM file like following it can be decoded
             // using method below
 
-            byte[] privateKeyBytes = PemFile.FromString(@"-----BEGIN RSA PRIVATE KEY-----
+            byte[] privateKeyBytes = PemFile.FromString(@@"-----BEGIN RSA PRIVATE KEY-----
 MIIEpQIBAAKCAQEAvCgYxv7/MsUTyx9KIn+wUkOWw6lNY3OH2Ea8adVPhWYhJerK
 7mH7PYNbsK/bVP2kbe8sIkVzNfsBogSScdWuSRvnIL/Uldqe9xg+b3g67ZjcWA4R
 0jKRhDiysyh3xjCZ6p/SwvV41OgMsDr4Be5Y0rK/x4SOPYK4zSe9Y/NYhYKXibP7
@@ -291,7 +291,7 @@ R+jWQdId7ZU7w9PA8CcJxCnRdMBpY4tLUb35j5flGsn2eDDOV2yYotM=
 
 
         /// public key if needed
-static byte[] publicKeyData = PemFile.FromString(@"-----BEGIN PUBLIC KEY-----
+static byte[] publicKeyData = PemFile.FromString(@@"-----BEGIN PUBLIC KEY-----
 MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvCgYxv7/MsUTyx9KIn+w
 UkOWw6lNY3OH2Ea8adVPhWYhJerK7mH7PYNbsK/bVP2kbe8sIkVzNfsBogSScdWu
 SRvnIL/Uldqe9xg+b3g67ZjcWA4R0jKRhDiysyh3xjCZ6p/SwvV41OgMsDr4Be5Y
