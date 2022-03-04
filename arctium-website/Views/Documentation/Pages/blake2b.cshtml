@@ -1,4 +1,16 @@
-```cs
+@{
+    Layout = "_DocLayout";
+    ViewData["Title"] = "BLAKE2B";
+
+}
+
+@section Summary
+{
+    <p>BLAKE2B hash function</p>
+}
+
+
+@Html.CodeBlockStart()
 using Arctium.Cryptography.HashFunctions.Hashes;
 using Arctium.Shared.Helpers.Buffers;
 using System.Text;
@@ -39,4 +51,4 @@ namespace DEBUG_ConsoleApplicationForTests
         }
     }
 }
-```
+@Html.CodeBlockEnd()

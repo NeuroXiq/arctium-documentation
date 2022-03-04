@@ -1,4 +1,13 @@
-```
+@{
+    ViewData["Title"] = "Skein";
+    Layout = "_DocLayout";
+}
+
+@section Summary {
+    <p>Skein hash function</p>
+}
+
+@Html.CodeBlockStart()
 byte[] input = new byte[1234];
 Skein_512 skein512 = new Skein_512();
 Skein_256 skein256 = new Skein_256();
@@ -52,4 +61,4 @@ MemDump.HexDump(s3);
  * EF96AB10 1FDED856 31E92815 DFA041AE
  * 
  */
-```
+@Html.CodeBlockEnd()

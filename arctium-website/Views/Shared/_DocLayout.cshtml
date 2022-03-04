@@ -1,0 +1,25 @@
+﻿<div class="documentation-page">
+    <h1 class="h1 title">@ViewData["Title"]</h1>
+
+    <div class="contents">
+        @if (IsSectionDefined("Contents"))
+        {
+            @RenderSection("Contents", false)
+        }
+        else if (ViewData.ContainsKey("ContentsTable"))
+        {
+            <partial name="Pages/_ContentsTable" model="@(ViewData["ContentsTable"])"/>
+        }
+    </div>
+    
+    @Html.Header("Summary", 2)
+
+    <div class="summary">
+        @RenderSection("Summary", false)
+    </div>
+
+    <div class="main">
+        @RenderBody()
+    </div>
+</div>
+

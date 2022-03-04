@@ -1,4 +1,10 @@
-```cs
+@{
+    ViewData["Title"] = "BLAKE3";
+    Layout = "_DocLayout";
+}
+
+
+@Html.CodeBlockStart()
 using Arctium.Cryptography.HashFunctions.Hashes;
 using Arctium.Shared.Helpers.Buffers;
 using System;
@@ -64,6 +70,4 @@ namespace DEBUG_ConsoleApplicationForTests
         }
     }
 }
-
-
-```
+@Html.CodeBlockEnd()

@@ -1,11 +1,33 @@
-```cs
+@{
+    Layout = "_DocLayout";
+    ViewData["Title"] = "PKCS#1 v2.2";
+}
+
+
+@section Summary 
+{
+    <p>PKCS#1 v2.2 standard (PKCS1v2_2API.cs)</p>
+}
+
+@Html.UnorderedList(new []
+    {
+        "OAEP Encryption (with customizable options)",
+        "OEAP Decryption (with customizable options)",
+        "RSASSA PSS Generate Signature (with customizable options) ",
+        "RSASSA PSS Verify Signature (with customizable options)",
+        "PKCS1 Encrypt",
+        "PKCS1 Decrypt",
+        "PKCS1 Generate signature (with customizable hash function)",
+        "PKCS1 Verify Signature (with customizable hash function)"
+    })
+
+@Html.Header("Examples", 2)
+@Html.CodeBlockStart()
 //
 // [Testing console program]
 // Testing console program exclude from solution.
 // Imports all Arctium dll, easy to check how something works
 //
-
-
 
 using Arctium.Cryptography.HashFunctions.Hashes;
 using Arctium.Shared.Helpers.Buffers;
@@ -16,7 +38,7 @@ using System.Text;
 
 /* 
  *
- * Examples for PKCS#1 v2.2 standard (PKCS1v2_2API.cs)
+ * 
  *
  * Methods defined in API:
  * 
@@ -35,7 +57,7 @@ using System.Text;
  * Generated output is at the bottom of the file
  *
  * */
-
+ 
 namespace DEBUG_ConsoleApplicationForTests
 {
     class Program
@@ -466,5 +488,4 @@ MQIDAQAB
 *    PKCS1 Is Customized signature valid? True
 *
 * * * * * * */
-```
-
+@Html.CodeBlockEnd()

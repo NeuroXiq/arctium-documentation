@@ -103,7 +103,6 @@
 .documentation .content {
     padding: 24px 32px;
     overflow: auto;
-    color: white;
     background-color: rgba(0,0,0,0.50);
     transition: all var(--time-fade-out) ease-out;
 }
@@ -119,10 +118,9 @@
     color: var(--color-foreground);
 }
 
-.documentation-page .title {
-    margin-bottom: 16px;
-    color: var(--color-foreground);
-    font-weight: 400;
+.documentation .h1,
+.documentation .h2 {
+    margin: 24px 0;
 }
 
 .content-table {
@@ -145,4 +143,16 @@
 .documentation .algorithms-summary .table {
     min-width: 600px;
     margin: 48px auto;
+}
+
+
+/* documentation-page */
+.documentation-page .title {
+    margin-bottom: 16px;
+    color: var(--color-foreground);
+    font-weight: 400;
+}
+
+.documentation-page {
+    max-width: 1000px;
 }

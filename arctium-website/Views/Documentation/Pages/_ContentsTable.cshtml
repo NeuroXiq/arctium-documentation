@@ -1,0 +1,9 @@
+﻿<ul class="content-table">
+    @foreach(var description in @Model) {
+        var elId = "#" + description.ToLower().Replace(' ', '-');
+
+        <li class="content-table__item">
+            <a class="link" href="@elId">@description</a>
+        </li>
+    }
+</ul>

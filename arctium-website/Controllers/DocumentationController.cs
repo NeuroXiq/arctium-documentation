@@ -58,35 +58,7 @@ namespace arctium_website.Controllers
                 }
             }
 
-            var name = model.ContentName;
-
-            if (!documentationPagesNames.Contains(name)) return "Documentation page not found";
-
-            var fileName = Path.Combine(Startup.WebRootPath, "documentation-pages", name);
-
-            var content = System.IO.File.ReadAllText(fileName);
-
-            return content;
+            return "Documentation page not found";
         }
-
-        //public IList<DocumentationPageMetadataModel> GetPagesMetadata()
-        //{
-        //    var x = new List<DocumentationPageMetadataModel>();
-
-        //    foreach (var docFile in documentationPagesNames)
-        //    {
-        //        x.Add(new DocumentationPageMetadataModel(docFile, docFile));
-        //    }
-
-        //    x.Add(new DocumentationPageMetadataModel("Algorithms Summary", "algorithms-summary"));
-
-        //    for (int i = 0; i < 120; i++)
-        //    {
-        //        var q = "doc page" + i;
-        //        x.Add(new DocumentationPageMetadataModel(q,q));
-        //    }
-
-        //    return x;
-        //}
     }
 }

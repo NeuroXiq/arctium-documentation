@@ -1,33 +1,22 @@
-<div class="documentation-page">
-    <h1 class="title">JH Hash function</h1>
-    <h2 class="title">Content:</h2>
+@{
+    Layout = "_DocLayout";
+    ViewData["Title"] = "JH";
+    ViewData["ContentsTable"] = new string[] { "Summary", "Examples" };
+}
 
-	<ul class="content-table">
-		<li class="content-table__item">
-            <a href="#summary" class="link">Summary</a>
-        </li>
-		<li class="content-table__item">
-			<a class="link" href="#examples">Examples</a>
-		</li>
-	</ul>
 
-    <hr />
 	
-	<h2 class="title" id="summary">Summary</h2>
+
+@section Summary
+{
 	<p>
 		JH Hash function
 	</p>
+}
 
-	<hr />
+<h3 class="title">Generating hash using all JH variants</h3>
 
-	<h2 class="title" id="examples">Examples</h2>
-    <h3 class="title">Generating hash using all JH variants</h3>
-
-	<div class="code-container">
-		<div class="header">
-		</div>
-		<div class="code">
-    	<pre>
+@Html.CodeBlockStart()
 class Program
     {
         static void Main()
@@ -97,8 +86,4 @@ class Program
              */
         }
     }
-	</pre>
-	    </div>
-	</div>
-</div>
-
+@Html.CodeBlockEnd()

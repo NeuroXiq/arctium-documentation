@@ -185,31 +185,7 @@
       "status": 0
     },
     {
-      "algorithmName": "SHA3-224",
-      "standardName": "[FIPS 202]",
-      "standardWebsiteUrl": "https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.202.pdf",
-      "arctiumWebsiteDocumentationUrl": "sha3",
-      "group": "hash-functions",
-      "status": 0
-    },
-    {
-      "algorithmName": "SHA3-256",
-      "standardName": "[FIPS 202]",
-      "standardWebsiteUrl": "https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.202.pdf",
-      "arctiumWebsiteDocumentationUrl": "sha3",
-      "group": "hash-functions",
-      "status": 0
-    },
-    {
-      "algorithmName": "SHA3-384",
-      "standardName": "[FIPS 202]",
-      "standardWebsiteUrl": "https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.202.pdf",
-      "arctiumWebsiteDocumentationUrl": "sha3",
-      "group": "hash-functions",
-      "status": 0
-    },
-    {
-      "algorithmName": "SHA3-512",
+      "algorithmName": "SHA3",
       "standardName": "[FIPS 202]",
       "standardWebsiteUrl": "https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.202.pdf",
       "arctiumWebsiteDocumentationUrl": "sha3",
@@ -228,7 +204,7 @@
       "algorithmName": "BLAKE2b512",
       "standardName": "",
       "standardWebsiteUrl": "",
-      "arctiumWebsiteDocumentationUrl": "blake2",
+      "arctiumWebsiteDocumentationUrl": "blake2b",
       "group": "hash-functions",
       "status": 0
     },

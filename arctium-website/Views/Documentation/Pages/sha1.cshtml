@@ -1,4 +1,13 @@
-```cs
+@{
+    ViewData["Title"] = "SHA1 Hash Function";
+    Layout = "_DocLayout";
+}
+
+@section Summary{
+    <p>SHA1 Hash function</p>
+}
+
+@Html.CodeBlockStart()
 using System;
 using System.Text;
 using Arctium.Cryptography.HashFunctions.Hashes;
@@ -44,4 +53,4 @@ namespace Program
         }
     }
 }
-```
+@Html.CodeBlockEnd()

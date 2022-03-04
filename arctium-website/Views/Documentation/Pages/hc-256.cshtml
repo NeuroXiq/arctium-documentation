@@ -1,4 +1,9 @@
-```cs
+@{
+    ViewData["Title"] = "HC-256";
+    Layout = "_DocLayout";
+}
+
+@Html.CodeBlockStart()
 using Arctium.Cryptography.Ciphers.StreamCiphers;
 using Arctium.Shared.Helpers.Binary;
 
@@ -47,5 +52,4 @@ namespace DEBUG_ConsoleApplicationForTests
         }
     }
 }
-
-```
+@Html.CodeBlockEnd()

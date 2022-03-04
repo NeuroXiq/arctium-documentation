@@ -1,5 +1,17 @@
-```cs
+@{
+    Layout = "_DocLayout";
+    ViewData["ContentsTable"] = new string[] { "Summary", "Examples" };
+    ViewData["Title"] = "Twofish";
+}
 
+@section Summary 
+{
+    Twofish algorithm
+}
+
+@Html.Header("Examples", 2)
+
+@Html.CodeBlockStart()
 using Arctium.Cryptography.Ciphers.BlockCiphers.Shared;
 using Arctium.Cryptography.Ciphers.BlockCiphers.Twofish;
 using Arctium.Shared.Helpers.Buffers;
@@ -154,4 +166,4 @@ namespace DEBUG_ConsoleApplicationForTests
     }
 }
 
-```
+@Html.CodeBlockEnd()

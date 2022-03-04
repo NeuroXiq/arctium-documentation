@@ -349,3 +349,14 @@ home-home.button:hover {
     font-size: 48px;
     font-weight: 600;
 }
+
+/* unordered list */
+.ul {
+    padding-left: 16px;
+}
+
+.ul .li {
+    display: list-item;
+    margin: 6px 0;
+    list-style-type: square;
+}
