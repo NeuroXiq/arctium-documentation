@@ -6,5 +6,9 @@
 **/obj/*
 obj/*
 bin/*
+obj/**
+bin/**
+obj
+bin
 **/.vs/**
 arctium-website-db
