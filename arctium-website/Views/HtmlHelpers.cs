@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
@@ -66,6 +67,7 @@ namespace arctium_website.Views
             var header = new TagBuilder(tagName);
 
             header.AddCssClass(tagName);
+            header.AddCssClass("header");
             header.InnerHtml.Append(content);
 
             return header;
@@ -115,6 +117,84 @@ namespace arctium_website.Views
             }
 
             return ul;
+        }
+
+        public static IHtmlContent TableSimple(this IHtmlHelper helper, string[] columns, string[][] rows)
+        {
+            var table = new TagBuilder("table");
+            var thead = new TagBuilder("thead");
+            var tbody = new TagBuilder("tbody");
+            var theadRow = new TagBuilder("tr");
+
+            table.AddCssClass("table");
+
+            foreach (var column in columns)
+            {
+                var th = new TagBuilder("th");
+                th.InnerHtml.Append(column);
+
+                th.AddCssClass("th");
+                theadRow.InnerHtml.AppendHtml(th);
+            }
+
+            thead.InnerHtml.AppendHtml(theadRow);
+
+            int rowLength = rows[0].Length;
+
+            for (int i = 0; i < rows.Length; i++)
+            {
+                if (rowLength != rows[i].Length) throw new ArgumentException("columns.length != rows.length");
+
+                var row = new TagBuilder("tr");
+                for (int j = 0; j < rowLength; j++)
+                {
+                    var td = new TagBuilder("td");
+                    td.InnerHtml.Append(rows[i][j]);
+                    row.InnerHtml.AppendHtml(td);
+                }
+
+                row.AddCssClass("tr");
+                tbody.InnerHtml.AppendHtml(row);
+            }
+
+            table.InnerHtml.AppendHtml(thead);
+            table.InnerHtml.AppendHtml(tbody);
+
+            return table;
+        }
+
+        public static IHtmlContent TableSimple(this IHtmlHelper helper, string[] columns, params string[] rows)
+        {
+            if (rows.Length % columns.Length != 0) throw new ArgumentException("columns % rows != 0");
+            
+            int rowLen = columns.Length;
+            int rowsCount = rows.Length / columns.Length;
+            string[][] rowAsArray = new string[rows.Length / columns.Length][];
+
+            for (int i = 0; i < rowsCount; i++)
+            {
+                rowAsArray[i] = new string[rowLen];
+            }
+
+            for (int i = 0; i < rows.Length; i++)
+            {
+                int rowIdx = i / rowLen;
+                int colIdx = i % rowLen;
+
+                rowAsArray[(rowIdx)][colIdx] = rows[i];
+            }
+
+            return helper.TableSimple(columns, rowAsArray);
+        }
+
+        public static IHtmlContent ItalicCode(this IHtmlHelper helper, string text)
+        {
+            var tag = new TagBuilder("i");
+
+            tag.InnerHtml.Append(text);
+            tag.AddCssClass("italic-code");
+
+            return tag;
         }
     }
 }

@@ -271,6 +271,398 @@
       "arctiumWebsiteDocumentationUrl": "skein",
       "group": "other",
       "status": 0
+    },
+    {
+      "algorithmName": "Skein",
+      "standardName": "-",
+      "standardWebsiteUrl": "-",
+      "arctiumWebsiteDocumentationUrl": "skein",
+      "group": "other",
+      "status": 0
+    },
+    {
+      "algorithmName": "AES CBC GCM etc. modes ",
+      "standardName": "-",
+      "standardWebsiteUrl": "-",
+      "arctiumWebsiteDocumentationUrl": "todo",
+      "group": "todo",
+      "status": 2
+    },
+    {
+      "algorithmName": "AES CBC GCM etc. modes ",
+      "standardName": "-",
+      "standardWebsiteUrl": "-",
+      "arctiumWebsiteDocumentationUrl": "todo",
+      "group": "todo",
+      "status": 2
+    },
+    {
+      "algorithmName": "Trivium (cipher ESTREAM)",
+      "standardName": "Trivium",
+      "standardWebsiteUrl": "https://www.ecrypt.eu.org/stream/triviumpf.html",
+      "arctiumWebsiteDocumentationUrl": "todo",
+      "group": "todo",
+      "status": 2
+    },
+    {
+      "algorithmName": "MICKEY (cipher ESTREAM)",
+      "standardName": "MICKEY",
+      "standardWebsiteUrl": "https://www.ecrypt.eu.org/stream/grainpf.html",
+      "arctiumWebsiteDocumentationUrl": "todo",
+      "group": "todo",
+      "status": 2
+    },
+    {
+      "algorithmName": "Grain (cipher ESTREAM)",
+      "standardName": "-",
+      "standardWebsiteUrl": "-",
+      "arctiumWebsiteDocumentationUrl": "todo",
+      "group": "todo",
+      "status": 2
+    },
+    {
+      "algorithmName": "Salsa22/12 [5] (cipher ESTREAM)",
+      "standardName": "-",
+      "standardWebsiteUrl": "-",
+      "arctiumWebsiteDocumentationUrl": "todo",
+      "group": "todo",
+      "status": 2
+    },
+    {
+      "algorithmName": "xxtea (cipher)",
+      "standardName": "-",
+      "standardWebsiteUrl": "-",
+      "arctiumWebsiteDocumentationUrl": "todo",
+      "group": "todo",
+      "status": 2
+    },
+    {
+      "algorithmName": "xtea (cipher)",
+      "standardName": "-",
+      "standardWebsiteUrl": "-",
+      "arctiumWebsiteDocumentationUrl": "todo",
+      "group": "todo",
+      "status": 2
+    },
+    {
+      "algorithmName": "treyfer (cipher)",
+      "standardName": "-",
+      "standardWebsiteUrl": "-",
+      "arctiumWebsiteDocumentationUrl": "todo",
+      "group": "todo",
+      "status": 2
+    },
+    {
+      "algorithmName": "rc4 (cipher)",
+      "standardName": "-",
+      "standardWebsiteUrl": "-",
+      "arctiumWebsiteDocumentationUrl": "todo",
+      "group": "todo",
+      "status": 2
+    },
+    {
+      "algorithmName": "TEA (ciphAer)",
+      "standardName": "-",
+      "standardWebsiteUrl": "-",
+      "arctiumWebsiteDocumentationUrl": "todo",
+      "group": "todo",
+      "status": 2
+    },
+    {
+      "algorithmName": "SEED (cipher)",
+      "standardName": "-",
+      "standardWebsiteUrl": "-",
+      "arctiumWebsiteDocumentationUrl": "todo",
+      "group": "todo",
+      "status": 2
+    },
+    {
+      "algorithmName": "IDEA",
+      "standardName": "-",
+      "standardWebsiteUrl": "-",
+      "arctiumWebsiteDocumentationUrl": "todo",
+      "group": "todo",
+      "status": 2
+    },
+    {
+      "algorithmName": "CAST-256 (cipher)",
+      "standardName": "-",
+      "standardWebsiteUrl": "-",
+      "arctiumWebsiteDocumentationUrl": "todo",
+      "group": "todo",
+      "status": 2
+    },
+    {
+      "algorithmName": "CAST-128",
+      "standardName": "-",
+      "standardWebsiteUrl": "-",
+      "arctiumWebsiteDocumentationUrl": "todo",
+      "group": "todo",
+      "status": 2
+    },
+    {
+      "algorithmName": "RIPEMED",
+      "standardName": "-",
+      "standardWebsiteUrl": "-",
+      "arctiumWebsiteDocumentationUrl": "todo",
+      "group": "todo",
+      "status": 2
+    },
+    {
+      "algorithmName": "RadioGatun hash func",
+      "standardName": "-",
+      "standardWebsiteUrl": "-",
+      "arctiumWebsiteDocumentationUrl": "todo",
+      "group": "todo",
+      "status": 2
+    },
+    {
+      "algorithmName": "streebog hash func",
+      "standardName": "-",
+      "standardWebsiteUrl": "-",
+      "arctiumWebsiteDocumentationUrl": "todo",
+      "group": "todo",
+      "status": 2
+    },
+    {
+      "algorithmName": "Whirlpool hash function",
+      "standardName": "-",
+      "standardWebsiteUrl": "-",
+      "arctiumWebsiteDocumentationUrl": "todo",
+      "group": "todo",
+      "status": 2
+    },
+    {
+      "algorithmName": "BLAKE2s",
+      "standardName": "-",
+      "standardWebsiteUrl": "-",
+      "arctiumWebsiteDocumentationUrl": "todo",
+      "group": "todo",
+      "status": 2
+    },
+    {
+      "algorithmName": "X529 certificate generator online",
+      "standardName": "-",
+      "standardWebsiteUrl": "-",
+      "arctiumWebsiteDocumentationUrl": "todo",
+      "group": "todo",
+      "status": 2
+    },
+    {
+      "algorithmName": "VMAC cipher",
+      "standardName": "-",
+      "standardWebsiteUrl": "-",
+      "arctiumWebsiteDocumentationUrl": "todo",
+      "group": "todo",
+      "status": 2
+    },
+    {
+      "algorithmName": "MD6",
+      "standardName": "-",
+      "standardWebsiteUrl": "-",
+      "arctiumWebsiteDocumentationUrl": "todo",
+      "group": "todo",
+      "status": 2
+    },
+    {
+      "algorithmName": "KMAC",
+      "standardName": "-",
+      "standardWebsiteUrl": "-",
+      "arctiumWebsiteDocumentationUrl": "todo",
+      "group": "todo",
+      "status": 2
+    },
+    {
+      "algorithmName": "HMAC",
+      "standardName": "-",
+      "standardWebsiteUrl": "-",
+      "arctiumWebsiteDocumentationUrl": "todo",
+      "group": "todo",
+      "status": 2
+    },
+    {
+      "algorithmName": "CRC-64",
+      "standardName": "-",
+      "standardWebsiteUrl": "-",
+      "arctiumWebsiteDocumentationUrl": "todo",
+      "group": "todo",
+      "status": 2
+    },
+    {
+      "algorithmName": "CRC-32",
+      "standardName": "-",
+      "standardWebsiteUrl": "-",
+      "arctiumWebsiteDocumentationUrl": "todo",
+      "group": "todo",
+      "status": 2
+    },
+    {
+      "algorithmName": "CRC-16",
+      "standardName": "-",
+      "standardWebsiteUrl": "-",
+      "arctiumWebsiteDocumentationUrl": "todo",
+      "group": "todo",
+      "status": 2
+    },
+    {
+      "algorithmName": "chsum",
+      "standardName": "-",
+      "standardWebsiteUrl": "-",
+      "arctiumWebsiteDocumentationUrl": "todo",
+      "group": "todo",
+      "status": 2
+    },
+    {
+      "algorithmName": "Finish X529 certificate",
+      "standardName": "-",
+      "standardWebsiteUrl": "-",
+      "arctiumWebsiteDocumentationUrl": "todo",
+      "group": "todo",
+      "status": 2
+    },
+    {
+      "algorithmName": "Argon2 (KDF)",
+      "standardName": "-",
+      "standardWebsiteUrl": "-",
+      "arctiumWebsiteDocumentationUrl": "todo",
+      "group": "todo",
+      "status": 2
+    },
+    {
+      "algorithmName": "ballon hasing",
+      "standardName": "-",
+      "standardWebsiteUrl": "-",
+      "arctiumWebsiteDocumentationUrl": "todo",
+      "group": "todo",
+      "status": 2
+    },
+    {
+      "algorithmName": "crypt(C)",
+      "standardName": "-",
+      "standardWebsiteUrl": "-",
+      "arctiumWebsiteDocumentationUrl": "todo",
+      "group": "todo",
+      "status": 2
+    },
+    {
+      "algorithmName": "hkdf",
+      "standardName": "-",
+      "standardWebsiteUrl": "-",
+      "arctiumWebsiteDocumentationUrl": "todo",
+      "group": "todo",
+      "status": 2
+    },
+    {
+      "algorithmName": "PBKDF2",
+      "standardName": "-",
+      "standardWebsiteUrl": "-",
+      "arctiumWebsiteDocumentationUrl": "todo",
+      "group": "todo",
+      "status": 2
+    },
+    {
+      "algorithmName": "lyra2",
+      "standardName": "-",
+      "standardWebsiteUrl": "-",
+      "arctiumWebsiteDocumentationUrl": "todo",
+      "group": "todo",
+      "status": 2
+    },
+    {
+      "algorithmName": "scrypt (key derivation func)",
+      "standardName": "-",
+      "standardWebsiteUrl": "-",
+      "arctiumWebsiteDocumentationUrl": "todo",
+      "group": "todo",
+      "status": 2
+    },
+    {
+      "algorithmName": "snefru(hash func)",
+      "standardName": "-",
+      "standardWebsiteUrl": "-",
+      "arctiumWebsiteDocumentationUrl": "todo",
+      "group": "todo",
+      "status": 2
+    },
+    {
+      "algorithmName": "spectral hash",
+      "standardName": "-",
+      "standardWebsiteUrl": "-",
+      "arctiumWebsiteDocumentationUrl": "todo",
+      "group": "todo",
+      "status": 2
+    },
+    {
+      "algorithmName": "SWIFFT hash func",
+      "standardName": "-",
+      "standardWebsiteUrl": "-",
+      "arctiumWebsiteDocumentationUrl": "todo",
+      "group": "todo",
+      "status": 2
+    },
+    {
+      "algorithmName": "TIGER(hash func)",
+      "standardName": "-",
+      "standardWebsiteUrl": "-",
+      "arctiumWebsiteDocumentationUrl": "todo",
+      "group": "todo",
+      "status": 2
+    },
+    {
+      "algorithmName": "Achterbahn (cipher)",
+      "standardName": "-",
+      "standardWebsiteUrl": "-",
+      "arctiumWebsiteDocumentationUrl": "todo",
+      "group": "todo",
+      "status": 2
+    },
+    {
+      "algorithmName": "cryptmt (cipher)",
+      "standardName": "-",
+      "standardWebsiteUrl": "-",
+      "arctiumWebsiteDocumentationUrl": "todo",
+      "group": "todo",
+      "status": 2
+    },
+    {
+      "algorithmName": "VEST (cipher)",
+      "standardName": "-",
+      "standardWebsiteUrl": "-",
+      "arctiumWebsiteDocumentationUrl": "todo",
+      "group": "todo",
+      "status": 2
+    },
+    {
+      "algorithmName": "Phelix (cipher)",
+      "standardName": "-",
+      "standardWebsiteUrl": "-",
+      "arctiumWebsiteDocumentationUrl": "todo",
+      "group": "todo",
+      "status": 2
+    },
+    {
+      "algorithmName": "SOSEMANUK (cipher)",
+      "standardName": "-",
+      "standardWebsiteUrl": "-",
+      "arctiumWebsiteDocumentationUrl": "todo",
+      "group": "todo",
+      "status": 2
+    },
+    {
+      "algorithmName": "PEM file (upodate documentation)",
+      "standardName": "-",
+      "standardWebsiteUrl": "pemfile",
+      "arctiumWebsiteDocumentationUrl": "todo",
+      "group": "todo",
+      "status": 2
+    },
+    {
+      "algorithmName": "CRC-8 / CRC-16 / CRC-32",
+      "standardName": "CRC",
+      "standardWebsiteUrl": "hash-functions",
+      "arctiumWebsiteDocumentationUrl": "crc",
+      "group": "",
+      "status": 0
     }
   ]
 }

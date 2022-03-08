@@ -118,8 +118,7 @@
     color: var(--color-foreground);
 }
 
-.documentation .h1,
-.documentation .h2 {
+.documentation .header {
     margin: 24px 0;
 }
 

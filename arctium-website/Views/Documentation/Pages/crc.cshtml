@@ -1,0 +1,131 @@
+@{
+    ViewData["Title"] = "CRC-8 / CRC-32 / CRC-64";
+    Layout = "_DocLayout";
+    ViewData["ContentsTable"] = new string[] { "Summary", "Predefined CRC", "Custom CRC" };
+}
+
+@section Summary{
+    <p>CRC-8 / CRC / CRC-32 / CRC-64 </p>
+    Provides class to compute CRC-8 / CRC-32 / CRC-64 cyclic redundancy check values from byte
+    array or stream. Predefined configurations exists (bluetooth, CRC8-DVB-S2 etc.) or 
+    customized instance can be created
+}
+
+@Html.Header("Predefined CRC", 2)
+
+<p>Predefined CRC instances are located in @Html.ItalicCode("PredefinedCRC") static class. For example, instance of CRC
+    can be created in following way:
+</p>
+
+@Html.CodeBlockStart()
+using Arctium.Cryptography.HashFunctions.CRC;
+
+namespace Program
+{
+    class Program
+    {
+        static void Main()
+        {
+            var bytes = new byte[] { 1, 2, 3 };
+            var crc32 = PredefinedCRC.CRC32_AIXM();
+            var crc8 = PredefinedCRC.CRC8SAE_J1850();
+
+
+            crc32.Process(bytes);
+            crc8.Process(bytes);
+
+            var crc32Result = crc32.Result();
+            var crc8Result = crc8.Result();
+
+            System.Console.WriteLine("CRC32: {0:X8}", crc32Result);
+            System.Console.WriteLine("CRC8: {0:X8}", crc8Result);
+
+            /*
+             * OUTPUT:
+             * CRC32: C371CF00
+             * CRC8: 000000C1
+             */
+        }
+    }
+}
+@Html.CodeBlockEnd()
+
+<p>All existing predefined CRC classes are listed below</p>
+
+@Html.UnorderedList(new string[]
+{
+    "CRC8_AUTOSAR",
+"CRC8_Bluetooth",
+"CRC8_CDMA2000",
+"CRC8_DARD",
+"CRC8_GSMA",
+"CRC8_GSMB",
+"CRC8_HITAG",
+"CRC8_OPENSAFETY",
+"CRC8_ROHC",
+"CRC32_AIXM",
+"CRC32_AUTOSAR",
+"CRC32_BZIP2",
+"CRC32_CKSUM",
+"CRC32_ISCSI",
+"CRC32_JAMCRC",
+"CRC32_MEF",
+"CRC32_XFER",
+"CRC64_MS",
+"CRC64_WE",
+"CRC64_XZ",
+"CRC64_ECMA182",
+})
+
+@Html.Header("Custom CRC", 3)
+<p>
+    CRC can be customized by five parameters. Possible parameters are:
+</p>
+
+@Html.TableSimple(
+    new string[] { "Parameter name", "Description" },
+    "name", "Any algorithms name e.g. \"CRC-32 CKSUM \"",
+    "polynomial", "CRC Polynomial e.g. 0xebdf43d1",
+    "initialValue", "CRC Initial value",
+    "finalXorValue", "After computing CRC result, result will be xored with this value e.g. 0xFFFFFFFF",
+    "inputReflected", "Indicates if all bits in input byte will be reversed, e.g. if input byte is: 0b00100001 it will be processed as 0b10000100",
+    "resultReflected", "Indicates if all bits in result should be inverted right before result is returned"
+)
+
+<p>Example below shows parameterized CRC instances </p>
+      
+@Html.CodeBlockStart()
+using Arctium.Cryptography.HashFunctions.CRC;
+
+namespace Program
+{
+    class Program
+    {
+        static void Main()
+        {
+            var bytesToProcess = new byte[] { 1, 2, 3 };
+
+            string name = "Custom-CRC64-Name";
+            ulong polynomial64 = 0x0123456789012345;
+            ulong initialValue64 = 0xff00ff00ff00ff00;
+            ulong finalXor64 = 0x00ff00ffffffff00;
+            bool resultReflected64 = false;
+            bool inputReflected64 = false;
+
+
+            var customCRC64 = new CRC64(name, polynomial64, initialValue64, finalXor64, inputReflected64, resultReflected64);
+
+            customCRC64.Process(bytesToProcess);
+            ulong result = customCRC64.Result();
+
+            System.Console.WriteLine("Custom CRC-64: {0:X16}", result);
+
+            /*
+             * OUTPUT:
+             * Custom CRC-64: 1A957D786BC78E49
+             */
+        }
+    }
+}
+
+@Html.CodeBlockEnd()
