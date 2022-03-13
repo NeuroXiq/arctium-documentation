@@ -1,0 +1,58 @@
+@{
+    ViewData["Title"] = "RadioGatun-64 / RadioGatun-32";
+    Layout = "_DocLayout";
+}
+
+@section Summary{
+    <p>RadioGatun-32 / RadioGatun-64 Hash Functions</p>
+}
+
+@Html.TableSimple(
+    new []{ "Name", "Input Block Size", "Hash Size" }, 
+    "RadioGatun-64", "24 bytes", "32 bytes",
+    "RadioGatun-32", "12 bytes", "32 bytes"
+)
+
+@Html.Header("Example", 2)
+
+@Html.CodeBlockStart()
+using Arctium.Cryptography.HashFunctions.Hashes;
+using Arctium.Shared.Helpers.Buffers;
+
+namespace Program
+{
+    class Program
+    {
+        static void Main()
+        {
+            byte[] bytes = new byte[] { 1, 2, 3 };
+
+            RadioGatun32 radio32 = new RadioGatun32();
+            RadioGatun64 radio64 = new RadioGatun64();
+
+            radio32.HashBytes(bytes);
+            radio64.HashBytes(bytes);
+
+            byte[] radio32Hash = radio32.HashFinal();
+            byte[] radio64Hash = radio64.HashFinal();
+
+
+            Console.WriteLine("RadiGatun-64 Hash:");
+            MemDump.HexDump(radio32Hash);
+
+            Console.WriteLine("RadiGatun-32 Hash:");
+            MemDump.HexDump(radio64Hash);
+
+            /*
+             * RadiGatun-64 Hash:
+             * 59A1B338 FA49E66C 46CEAC1E 4CC644BA
+             * 8AD0A026 1F42CB68 C03E9301 1D77FF63
+             * 
+             * RadiGatun-32 Hash:
+             * 28368E03 6CD876A2 7C65B6D6 0CD0DB70
+             * 823FF211 61A89F22 4B7F86B7 BB234673
+             */
+        }
+    }
+}
+@Html.CodeBlockEnd()

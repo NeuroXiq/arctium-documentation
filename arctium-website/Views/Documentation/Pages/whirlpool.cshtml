@@ -1,0 +1,45 @@
+@{
+    ViewData["Title"] = "Whirlpool";
+    Layout = "_DocLayout";
+}
+
+@section Summary{
+    <p>Whirlpool Hash Function</p>
+}
+
+<p>Whirlpool hash function implementation. Input block size 64 bytes, output hash 512 bits</p>
+
+@Html.CodeBlockStart()
+using Arctium.Cryptography.HashFunctions.Hashes;
+using Arctium.Shared.Helpers.Buffers;
+using System.Text;
+
+namespace Program
+{
+    unsafe class Program
+    {
+        static void Main(string[] args)
+        {
+            Whirlpool whirlpool = new Whirlpool();
+
+            byte[] bytesToHash = Encoding.ASCII.GetBytes("abc");
+
+            whirlpool.HashBytes(bytesToHash);
+            byte[] hash = whirlpool.HashFinal();
+
+
+            MemDump.HexDump(hash);
+
+            /*
+             * OUTPUT:
+             * 4E2448A4 C6F486BB 16B6562C 73B4020B
+             * F3043E3A 731BCE72 1AE1B303 D97E6D4C
+             * 7181EEBD B6C57E27 7D0E3495 7114CBD6
+             * C797FC9D 95D8B582 D2252920 76D4EEF5
+             */
+        }
+    }
+
+}
+}
+@Html.CodeBlockEnd()

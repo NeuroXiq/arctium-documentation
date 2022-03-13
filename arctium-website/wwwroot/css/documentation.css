@@ -144,6 +144,14 @@
     margin: 48px auto;
 }
 
+.table {
+    min-width: 600px;
+}
+
+.table .th,
+.table .td {
+    text-align: center;
+}
 
 /* documentation-page */
 .documentation-page .title {

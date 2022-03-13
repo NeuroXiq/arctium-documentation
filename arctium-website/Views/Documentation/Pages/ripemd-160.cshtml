@@ -1,0 +1,42 @@
+@{
+    ViewData["Title"] = "RIPEMD_160";
+    Layout = "_DocLayout";
+}
+
+@section Summary{
+    <p>RIPEMD-160 Hash Function</p>
+}
+
+<p>RIPEMD-160 hash function implementation. Input block size 64 bytes, output hash 160 bits</p>
+
+@Html.CodeBlockStart()
+using Arctium.Cryptography.HashFunctions.Hashes;
+using Arctium.Shared.Helpers.Buffers;
+using System.Text;
+
+namespace Program
+{
+    unsafe class Program
+    {
+        // 40476ms 1gb
+        static void Main(string[] args)
+        {
+            RIPEMD_160 ripemd = new RIPEMD_160();
+
+            byte[] bytesToHash = Encoding.ASCII.GetBytes("abc");
+
+            ripemd.HashBytes(bytesToHash);
+            byte[] hash = ripemd.HashFinal();
+
+
+            MemDump.HexDump(hash);
+
+            /*
+             * OUTPUT:
+             * 8EB208F7 E05D987A 9B044A8E 98C6B087 F15A0BFC
+             */
+        }
+    }
+
+}
+@Html.CodeBlockEnd()

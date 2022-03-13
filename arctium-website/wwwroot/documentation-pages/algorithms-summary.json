@@ -78,7 +78,7 @@
       "standardWebsiteUrl": "-",
       "arctiumWebsiteDocumentationUrl": "rabbit",
       "group": "hash-functions",
-      "status": 2
+      "status": 0
     },
     {
       "algorithmName": "RC4",
@@ -401,20 +401,28 @@
       "status": 2
     },
     {
-      "algorithmName": "RIPEMED",
+      "algorithmName": "RIPEMD-160",
       "standardName": "-",
       "standardWebsiteUrl": "-",
-      "arctiumWebsiteDocumentationUrl": "todo",
-      "group": "todo",
-      "status": 2
+      "arctiumWebsiteDocumentationUrl": "ripemd-160",
+      "group": "hash-functions",
+      "status": 0
     },
     {
-      "algorithmName": "RadioGatun hash func",
-      "standardName": "-",
-      "standardWebsiteUrl": "-",
-      "arctiumWebsiteDocumentationUrl": "todo",
-      "group": "todo",
-      "status": 2
+      "algorithmName": "RadioGatun-32",
+      "standardName": "[RADIGATUN]",
+      "standardWebsiteUrl": "http://radiogatun.noekeon.org/",
+      "arctiumWebsiteDocumentationUrl": "radiogatun",
+      "group": "hash-functions",
+      "status": 0
+    },
+    {
+      "algorithmName": "RadioGatun-64",
+      "standardName": "[RADIGATUN]",
+      "standardWebsiteUrl": "http://radiogatun.noekeon.org/",
+      "arctiumWebsiteDocumentationUrl": "radiogatun",
+      "group": "hash-functions",
+      "status": 0
     },
     {
       "algorithmName": "streebog hash func",
@@ -427,10 +435,10 @@
     {
       "algorithmName": "Whirlpool hash function",
       "standardName": "-",
-      "standardWebsiteUrl": "-",
-      "arctiumWebsiteDocumentationUrl": "todo",
-      "group": "todo",
-      "status": 2
+      "standardWebsiteUrl": "whirlpool",
+      "arctiumWebsiteDocumentationUrl": "whirlpool",
+      "group": "hash-functions",
+      "status": 0
     },
     {
       "algorithmName": "BLAKE2s",
@@ -484,25 +492,25 @@
       "algorithmName": "CRC-64",
       "standardName": "-",
       "standardWebsiteUrl": "-",
-      "arctiumWebsiteDocumentationUrl": "todo",
-      "group": "todo",
-      "status": 2
+      "arctiumWebsiteDocumentationUrl": "crc",
+      "group": "hash-functions",
+      "status": 0
     },
     {
       "algorithmName": "CRC-32",
       "standardName": "-",
       "standardWebsiteUrl": "-",
-      "arctiumWebsiteDocumentationUrl": "todo",
-      "group": "todo",
-      "status": 2
+      "arctiumWebsiteDocumentationUrl": "crc",
+      "group": "hash-functions",
+      "status": 0
     },
     {
       "algorithmName": "CRC-16",
       "standardName": "-",
       "standardWebsiteUrl": "-",
-      "arctiumWebsiteDocumentationUrl": "todo",
-      "group": "todo",
-      "status": 2
+      "arctiumWebsiteDocumentationUrl": "crc",
+      "group": "hash-functions",
+      "status": 0
     },
     {
       "algorithmName": "chsum",
@@ -663,6 +671,14 @@
       "arctiumWebsiteDocumentationUrl": "crc",
       "group": "",
       "status": 0
+    },
+    {
+      "algorithmName": "Camellia (block ciper)",
+      "standardName": "-",
+      "standardWebsiteUrl": "-",
+      "arctiumWebsiteDocumentationUrl": "crc",
+      "group": "",
+      "status": 2
     }
   ]
 }

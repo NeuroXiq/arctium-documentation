@@ -149,6 +149,8 @@ namespace arctium_website.Views
                 for (int j = 0; j < rowLength; j++)
                 {
                     var td = new TagBuilder("td");
+                    td.AddCssClass("td");
+
                     td.InnerHtml.Append(rows[i][j]);
                     row.InnerHtml.AppendHtml(td);
                 }
