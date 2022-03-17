@@ -425,12 +425,20 @@
       "status": 0
     },
     {
-      "algorithmName": "streebog hash func",
-      "standardName": "-",
-      "standardWebsiteUrl": "-",
-      "arctiumWebsiteDocumentationUrl": "todo",
-      "group": "todo",
-      "status": 2
+      "algorithmName": "Streebog-512",
+      "standardName": "[RFC 6986]",
+      "standardWebsiteUrl": "https://datatracker.ietf.org/doc/html/rfc6986",
+      "arctiumWebsiteDocumentationUrl": "streebog",
+      "group": "hash-functions",
+      "status": 0
+    },
+    {
+      "algorithmName": "Streebog-256",
+      "standardName": "[RFC 6986]",
+      "standardWebsiteUrl": "https://datatracker.ietf.org/doc/html/rfc6986",
+      "arctiumWebsiteDocumentationUrl": "streebog",
+      "group": "hash-functions",
+      "status": 0
     },
     {
       "algorithmName": "Whirlpool hash function",
@@ -676,6 +684,54 @@
       "algorithmName": "Camellia (block ciper)",
       "standardName": "-",
       "standardWebsiteUrl": "-",
+      "arctiumWebsiteDocumentationUrl": "crc",
+      "group": "",
+      "status": 2
+    },
+    {
+      "algorithmName": "Ascon (CAESAR COMPETITION SUBMISSION)",
+      "standardName": "-",
+      "standardWebsiteUrl": "https://competitions.cr.yp.to/caesar-submissions.html",
+      "arctiumWebsiteDocumentationUrl": "crc",
+      "group": "",
+      "status": 2
+    },
+    {
+      "algorithmName": "ACORN (CAESAR COMPETITION SUBMISSION)",
+      "standardName": "-",
+      "standardWebsiteUrl": "https://competitions.cr.yp.to/caesar-submissions.html",
+      "arctiumWebsiteDocumentationUrl": "crc",
+      "group": "",
+      "status": 2
+    },
+    {
+      "algorithmName": "AEGIS-128 (CAESAR COMPETITION SUBMISSION)",
+      "standardName": "-",
+      "standardWebsiteUrl": "https://competitions.cr.yp.to/caesar-submissions.html",
+      "arctiumWebsiteDocumentationUrl": "crc",
+      "group": "",
+      "status": 2
+    },
+    {
+      "algorithmName": "OCB (CAESAR COMPETITION SUBMISSION)",
+      "standardName": "-",
+      "standardWebsiteUrl": "https://competitions.cr.yp.to/caesar-submissions.html",
+      "arctiumWebsiteDocumentationUrl": "crc",
+      "group": "",
+      "status": 2
+    },
+    {
+      "algorithmName": "Deoxys-II (CAESAR COMPETITION SUBMISSION)",
+      "standardName": "-",
+      "standardWebsiteUrl": "https://competitions.cr.yp.to/caesar-submissions.html",
+      "arctiumWebsiteDocumentationUrl": "crc",
+      "group": "",
+      "status": 2
+    },
+    {
+      "algorithmName": "COLM (CAESAR COMPETITION SUBMISSION)",
+      "standardName": "-",
+      "standardWebsiteUrl": "https://competitions.cr.yp.to/caesar-submissions.html",
       "arctiumWebsiteDocumentationUrl": "crc",
       "group": "",
       "status": 2

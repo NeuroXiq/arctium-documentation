@@ -1,0 +1,57 @@
+@{
+    ViewData["Title"] = "Streebog-256 / Streebog-512";
+    Layout = "_DocLayout";
+}
+
+@section Summary{
+    <p>Streebog-256 / Streebog-512</p>
+}
+
+<p>Streebog-256 / Streebog-512 implementation</p>
+
+@Html.CodeBlockStart()
+using Arctium.Cryptography.HashFunctions.Hashes;
+using Arctium.Cryptography.HashFunctions.Hashes.Algorithms;
+using Arctium.Shared.Helpers.Binary;
+using Arctium.Shared.Helpers.Buffers;
+using System.Text;
+
+namespace Program
+{
+    class Program
+    {
+        static void Main()
+        {
+            byte[] inputBytes = Encoding.ASCII.GetBytes("The quick brown fox jumps over the lazy dog");
+            
+            Streebog_256 streebog256 = new Streebog_256();
+            Streebog_512 streebog512 = new Streebog_512();
+
+            streebog256.HashBytes(inputBytes);
+            streebog512.HashBytes(inputBytes);
+
+            var streebog256Result = streebog256.HashFinal();
+            var streebog512Result = streebog512.HashFinal();
+
+            Console.WriteLine("Streebog 256 bits:");
+            MemDump.HexDump(streebog256Result);
+
+            Console.WriteLine("Streebog 512 bits:");
+            MemDump.HexDump(streebog512Result);
+
+            /*
+             * Streebog 256 bits:
+             * 3E7DEA7F 2384B6C5 A3D0E24A AA29C05E
+             * 89DDD762 145030EC 22C71A6D B8B2C1F4
+             * 
+             * Streebog 512 bits:
+             * D2B793A0 BB6CB590 4828B5B6 DCFB443B
+             * B8F33EFC 06AD0936 8878AE4C DC8245B9
+             * 7E608024 69BED1E7 C21A64FF 0B179A6A
+             * 1E0BB74D 92965450 A0ADAB69 162C00FE
+             * 
+             */
+        }
+    }
+}
+@Html.CodeBlockEnd()
