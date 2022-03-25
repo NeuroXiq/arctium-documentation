@@ -681,12 +681,12 @@
       "status": 0
     },
     {
-      "algorithmName": "Camellia (block ciper)",
-      "standardName": "-",
-      "standardWebsiteUrl": "-",
-      "arctiumWebsiteDocumentationUrl": "crc",
+      "algorithmName": "Camellia (block ciper, UPDATE DOCS)",
+      "standardName": "CAMELLIA",
+      "standardWebsiteUrl": "https://info.isl.ntt.co.jp/crypt/eng/camellia/",
+      "arctiumWebsiteDocumentationUrl": "TODO",
       "group": "",
-      "status": 2
+      "status": 0
     },
     {
       "algorithmName": "Ascon (CAESAR COMPETITION SUBMISSION)",
